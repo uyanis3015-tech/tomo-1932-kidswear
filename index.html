@@ -1,17 +1,65 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <title>Tomo1932 Kidswear - Kindertextil</title>
-    <style>
-        body { font-family: Arial; text-align: center; background: #f0f8ff; }
-        img { max-width: 300px; margin: 20px; }
-        h1 { color: #00bfff; }
-    </style>
+<title>Tomo1932</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+body{background:#f8f9fa;}
+nav{background:white;position:fixed;top:0;width:100%;padding:1rem 2rem;box-shadow:0 2px 10px rgba(0,0,0,0.1);display:flex;justify-content:space-between;z-index:100;}
+.logo{height:50px;}
+.lang{display:flex;gap:10px;}
+.lang button{padding:8px 15px;border:2px solid #00bfff;border-radius:20px;background:none;cursor:pointer;}
+.lang button.active{background:#00bfff;color:white;}
+.hero{padding:100px 2rem;text-align:center;color:white;background:linear-gradient(135deg,#667eea,#764ba2);}
+.hero h1{font-size:3rem;margin-bottom:1rem;}
+.products{max-width:1200px;margin:4rem auto;padding:0 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
+.product{background:white;border-radius:20px;padding:2rem;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+.product div{height:200px;background:#ecf0f1;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:4rem;}
+.price{font-size:2rem;color:#e74c3c;font-weight:bold;margin-top:1rem;}
+.reviews{background:white;margin:4rem 2rem;padding:2rem;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+</style>
 </head>
 <body>
-    <img src="logo.png" alt="Tomo1932 Logo">
-    <h1>Willkommen bei Tomo1932 Kidswear!</h1>
-    <p>Stilvolle Kindermode für kleine Stars. Hochwertige Textilien in Top-Qualität.</p>
-    <p>👕 👖 👗 Kinderbekleidung für alle Altersgruppen</p>
+<nav>
+<img src="logo.png" alt="Logo" class="logo">
+<div class="lang">
+<button class="active" onclick="setLang('de')">DE</button>
+<button onclick="setLang('tr')">TR</button>
+<button onclick="setLang('ar')">AR</button>
+</div>
+</nav>
+
+<section class="hero">
+<h1 id="h1">Willkommen Tomo1932!</h1>
+<p id="p1">Kinder Mode 0-12 Jahre</p>
+</section>
+
+<section class="products">
+<div class="product">
+<div>👕</div>
+<h3 id="t1">T-Shirt</h3>
+<div class="price" id="pr1">€19</div>
+<div>0-12 Jahre</div>
+</div>
+<div class="product">
+<div>👖</div>
+<h3 id="t2">Jeans</h3>
+<div class="price" id="pr2">€35</div>
+<div>0-12 Jahre</div>
+</div>
+<div class="product">
+<div>👗</div>
+<h3 id="t3">Kleid</h3>
+<div class="price" id="pr3">€50</div>
+<div>0-12 Jahre</div>
+</div>
+</section>
+
+<script>
+l={de:{h1:'Willkommen Tomo1932!',p1:'Kinder Mode 0-12 Jahre',t1:'T-Shirt',t2:'Jeans',t3:'Kleid',pr1:'€19',pr2:'€35',pr3:'€50'},tr:{h1:'Tomo1932 Hoşgeldin!',p1:'Çocuk Kıyafeti 0-12 Yaş',t1:'T-Shirt',t2:'Jean',t3:'Elbise',pr1:'€19',pr2:'€35',pr3:'€50'}};
+function setLang(x){Object.keys(l[x]).forEach(id=>document.getElementById(id).textContent=l[x][id]);document.querySelectorAll('.lang button').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');}
+</script>
 </body>
 </html>
