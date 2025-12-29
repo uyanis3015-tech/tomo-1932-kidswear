@@ -1,98 +1,76 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<title>Tomo1932 Kinder Mode</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<style>
-* {margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-body {background:#f8f9fa;}
-nav {background:white;position:fixed;top:0;width:100%;padding:1rem 2rem;box-shadow:0 2px 10px rgba(0,0,0,0.1);display:flex;justify-content:space-between;align-items:center;z-index:100;}
-.logo {height:60px;}
-.hero {padding:120px 2rem 60px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;text-align:center;}
-.hero h1 {font-size:3rem;margin-bottom:1rem;}
-.hero p {font-size:1.2rem;}
-.products {max-width:1200px;margin:4rem auto;padding:0 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;}
-.product {background:white;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:transform 0.3s;}
-.product:hover {transform:translateY(-10px);}
-.product-img {height:250px;background:#ecf0f1;display:flex;align-items:center;justify-content:center;font-size:4rem;}
-.product-body {padding:2rem;text-align:center;}
-.product-title {font-size:1.5rem;color:#2c3e50;margin-bottom:0.5rem;}
-.product-price {font-size:2rem;color:#e74c3c;font-weight:bold;}
-.age {color:#7f8c8d;font-size:0.9rem;margin-top:0.5rem;}
-.reviews {background:white;margin:4rem 2rem;padding:3rem;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.1);max-width:1200px;margin-left:auto;margin-right:auto;}
-.reviews h2 {text-align:center;font-size:2rem;color:#2c3e50;margin-bottom:2rem;}
-.review {display:flex;align-items:flex-start;gap:1rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid #eee;}
-.stars {color:#f39c12;font-size:1.5rem;}
-.review-text {flex:1;}
-@media (max-width:768px) {.hero h1 {font-size:2rem;}}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOMOKidswear – Kinderbekleidung Online Shop</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<nav>
-<img src="logo.png" alt="Tomo1932 Kidswear" class="logo">
-</nav>
-<section class="hero">
-<h1>Willkommen bei Tomo1932!</h1>
-<p>Premium Kinderbekleidung 0-12 Jahre | Mädchen & Jungen | Beste Qualität</p>
+
+<header class="header">
+    <div class="header-container">
+        <img src="assets/logo.png" alt="TOMOKidswear Logo" class="logo">
+        <nav class="nav-menu">
+            <a href="#home">Startseite</a>
+            <a href="#kinder-mode">Kinder Mode</a>
+            <a href="#angebote">Angebote</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Willkommen bei <span>TOMOKidswear</span></h1>
+        <p>Die besten Kinderoutfits online – Stilvoll. Bequem. Sicher.</p>
+        <a href="#kinder-mode" class="btn">Jetzt entdecken</a>
+    </div>
 </section>
-<section class="products">
-<div class="product">
-<div class="product-img">👕</div>
-<div class="product-body">
-<h3>Bio-Baumwoll T-Shirt</h3>
-<div class="product-price">€19,99</div>
-<div class="age">0-4 Jahre | 5-8 Jahre | Mädchen & Jungen</div>
-</div>
-</div>
-<div class="product">
-<div class="product-img">👖</div>
-<div class="product-body">
-<h3>Stretch Jeanshose</h3>
-<div class="product-price">€34,99</div>
-<div class="age">2-6 Jahre | 7-12 Jahre | Jungen</div>
-</div>
-</div>
-<div class="product">
-<div class="product-img">👗</div>
-<div class="product-body">
-<h3>Festtags Kleid</h3>
-<div class="product-price">€49,99</div>
-<div class="age">3-7 Jahre | 8-11 Jahre | Mädchen</div>
-</div>
-</div>
-<div class="product">
-<div class="product-img">👟</div>
-<div class="product-body">
-<h3>Leder Sneaker</h3>
-<div class="product-price">€39,99</div>
-<div class="age">4-8 Jahre | 9-12 Jahre | Unisex</div>
-</div>
-</div>
+
+<section class="categories" id="kinder-mode">
+    <h2>Unsere Kategorien</h2>
+    <div class="category-cards">
+        <div class="card">
+            <img src="assets/images/kategorie-kids.jpg" alt="Kinder Mode">
+            <h3>Kinder Mode</h3>
+        </div>
+        <div class="card">
+            <img src="assets/images/kategorie-baby.jpg" alt="Babymode">
+            <h3>Babymode</h3>
+        </div>
+        <div class="card">
+            <img src="assets/images/kategorie-angebote.jpg" alt="Angebote">
+            <h3>Angebote</h3>
+        </div>
+    </div>
 </section>
-<section class="reviews">
-<h2>Was unsere Kunden sagen</h2>
-<div class="review">
-<div class="stars">★★★★★</div>
-<div class="review-text">
-<strong>Anna Müller</strong><br>
-"Perfekte Qualität für den Preis! Die Größen passen genau und das Material fühlt sich hochwertig an. Mein Sohn trägt das T-Shirt jeden Tag!"
-</div>
-</div>
-<div class="review">
-<div class="stars">★★★★★</div>
-<div class="review-text">
-<strong>Thomas B.</strong><br>
-"Schnelle Lieferung und super Verarbeitung. Die Jeans sitzen perfekt und sehen aus wie aus einer teuren Marke. Sehr empfehlenswert!"
-</div>
-</div>
-<div class="review">
-<div class="stars">★★★★★</div>
-<div class="review-text">
-<strong>Sarah K.</strong><br>
-"Das Kleid ist wunderschön! Meine Tochter fühlt sich wie eine Prinzessin darin. Qualität top, würde sofort wieder kaufen."
-</div>
-</div>
+
+<section class="featured-products" id="angebote">
+    <h2>Top Angebote</h2>
+    <div class="products-grid">
+        <div class="product">
+            <img src="assets/images/product1.jpg" alt="Produkt 1">
+            <p>Cooles Kinder T-Shirt</p>
+            <span>€29,99</span>
+        </div>
+        <div class="product">
+            <img src="assets/images/product2.jpg" alt="Produkt 2">
+            <p>Bequeme Jogginghose</p>
+            <span>€34,99</span>
+        </div>
+        <div class="product">
+            <img src="assets/images/product3.jpg" alt="Produkt 3">
+            <p>Warm Winterjacke</p>
+            <span>€49,99</span>
+        </div>
+    </div>
 </section>
+
+<footer class="footer" id="kontakt">
+    <p>© 2025 TOMOKidswear • Alle Rechte vorbehalten.</p>
+    <p>Kontakt: info@tomokidswear.de</p>
+</footer>
+
 </body>
 </html>
