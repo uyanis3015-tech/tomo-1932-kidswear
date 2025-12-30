@@ -5,7 +5,6 @@
   <title>Tomo1932 – Kinderbekleidung 0–12 Jahre</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- GÖMÜLÜ CSS (HER ŞEY TEK DOSYADA) -->
   <style>
     :root {
       --primary: #ff6b6b;
@@ -37,15 +36,8 @@
       line-height: 1.5;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
 
     .container {
       max-width: var(--container-width);
@@ -142,9 +134,7 @@
       transition: var(--transition);
     }
 
-    .icon-button:hover {
-      background: #e5e7eb;
-    }
+    .icon-button:hover { background: #e5e7eb; }
 
     /* Hero */
     .hero {
@@ -188,34 +178,17 @@
       font-weight: 500;
     }
 
-    .btn.primary {
-      background: var(--primary);
-      color: #ffffff;
-    }
-
-    .btn.primary:hover {
-      background: var(--primary-dark);
-    }
-
+    .btn.primary { background: var(--primary); color: #ffffff; }
+    .btn.primary:hover { background: var(--primary-dark); }
     .btn.secondary {
       background: #ffffff;
       color: #374151;
       border: 1px solid var(--border);
     }
+    .btn.secondary:hover { background: #f9fafb; }
+    .btn.small { padding: 6px 12px; font-size: 13px; }
 
-    .btn.secondary:hover {
-      background: #f9fafb;
-    }
-
-    .btn.small {
-      padding: 6px 12px;
-      font-size: 13px;
-    }
-
-    .hero-image {
-      display: flex;
-      justify-content: center;
-    }
+    .hero-image { display: flex; justify-content: center; }
 
     .hero-placeholder {
       background: #e5e7eb;
@@ -233,14 +206,8 @@
     }
 
     /* Categories */
-    .categories {
-      padding: 32px 0;
-    }
-
-    .categories h2 {
-      font-size: 22px;
-      margin-bottom: 16px;
-    }
+    .categories { padding: 32px 0; }
+    .categories h2 { font-size: 22px; margin-bottom: 16px; }
 
     .category-grid {
       display: grid;
@@ -291,13 +258,8 @@
     }
 
     /* Product Sections */
-    .product-section {
-      padding: 32px 0;
-    }
-
-    .product-section.alt-bg {
-      background: var(--bg-light);
-    }
+    .product-section { padding: 32px 0; }
+    .product-section.alt-bg { background: var(--bg-light); }
 
     .section-header {
       display: flex;
@@ -306,14 +268,8 @@
       margin-bottom: 16px;
     }
 
-    .section-header h2 {
-      font-size: 20px;
-    }
-
-    .link-all {
-      font-size: 14px;
-      color: #2563eb;
-    }
+    .section-header h2 { font-size: 20px; }
+    .link-all { font-size: 14px; color: #2563eb; }
 
     .product-grid {
       display: grid;
@@ -345,9 +301,7 @@
       display: block;
     }
 
-    .product-card h3 {
-      font-size: 14px;
-    }
+    .product-card h3 { font-size: 14px; }
 
     .product-desc {
       font-size: 13px;
@@ -380,10 +334,7 @@
       background: #f3f4f6;
     }
 
-    .sale-section h2 {
-      font-size: 20px;
-      margin-bottom: 16px;
-    }
+    .sale-section h2 { font-size: 20px; margin-bottom: 16px; }
 
     .sale-grid {
       display: grid;
@@ -398,10 +349,7 @@
       box-shadow: var(--shadow-soft);
     }
 
-    .sale-card h3 {
-      font-size: 16px;
-      margin-bottom: 4px;
-    }
+    .sale-card h3 { font-size: 16px; margin-bottom: 4px; }
 
     /* Footer */
     .site-footer {
@@ -429,13 +377,8 @@
       color: #9ca3af;
     }
 
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col a {
-      color: #e5e7eb;
-    }
+    .footer-col ul { list-style: none; }
+    .footer-col a { color: #e5e7eb; }
 
     .footer-bottom {
       border-top: 1px solid #1f2937;
@@ -447,9 +390,7 @@
 
     /* Responsive */
     @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-      }
+      .hero-inner { grid-template-columns: 1fr; }
 
       .category-grid,
       .product-grid,
@@ -458,9 +399,7 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .main-nav {
-        display: none;
-      }
+      .main-nav { display: none; }
 
       .header-inner {
         flex-direction: column;
@@ -482,9 +421,7 @@
         gap: 4px;
       }
 
-      .hero {
-        padding-top: 20px;
-      }
+      .hero { padding-top: 20px; }
     }
   </style>
 </head>
@@ -526,11 +463,11 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO: ÇOCUK GİYİM FOTO -->
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-text">
-        <h1>Entdecke bunte Mode für Kinder von 0–12 Jahren</h1>
+        <h1>Bunte &amp; bequeme Kinderbekleidung</h1>
         <p>
           Alltagstaugliche Mode für Babys und Kinder – weiche Stoffe, fröhliche Farben, faire Preise.
         </p>
@@ -541,21 +478,24 @@
       </div>
       <div class="hero-image">
         <div class="hero-placeholder">
-          <!-- Telifsiz stock foto (Unsplash) -->
-          <img src="https://images.pexels.com/photos/4475921/pexels-photo-4475921.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Kinder in bunter Kleidung" />
+          <!-- Çocuk modası: çocuklar ve kıyafetleri -->
+          <img src="https://images.pexels.com/photos/3662845/pexels-photo-3662845.jpeg?auto=compress&cs=tinysrgb&w=1200"
+               alt="Kinder in bunter Kleidung" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- KATEGORIEN -->
+  <!-- KATEGORİLER: BEBEK / ÇOCUK / JUNIOR -->
   <section class="categories">
     <div class="container">
       <h2>Shoppe nach Kategorie</h2>
       <div class="category-grid">
         <a href="#baby" class="category-card">
           <div class="category-image">
-            <img src="https://images.pexels.com/photos/4599573/pexels-photo-4599573.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Babybekleidung" />
+            <!-- Bebek kıyafetleri -->
+            <img src="https://images.pexels.com/photos/4599573/pexels-photo-4599573.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="Babybekleidung" />
           </div>
           <div class="category-content">
             <h3>Baby 0–24 Monate</h3>
@@ -565,7 +505,9 @@
 
         <a href="#kids" class="category-card">
           <div class="category-image">
-            <img src="https://images.pexels.com/photos/3662845/pexels-photo-3662845.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Kinderbekleidung" />
+            <!-- Küçük çocuklar, gündelik kıyafetler -->
+            <img src="https://images.pexels.com/photos/3662845/pexels-photo-3662845.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="Kinderbekleidung" />
           </div>
           <div class="category-content">
             <h3>Kinder 2–6 Jahre</h3>
@@ -575,7 +517,9 @@
 
         <a href="#junior" class="category-card">
           <div class="category-image">
-            <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Junior Mode" />
+            <!-- Junior yaş grubu, günlük kombin -->
+            <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="Junior Mode" />
           </div>
           <div class="category-content">
             <h3>Junior 7–12 Jahre</h3>
@@ -597,7 +541,9 @@
       <div class="product-grid">
         <article class="product-card">
           <div class="product-image">
-            <img src="https://images.pexels.com/photos/4599572/pexels-photo-4599572.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Baby Body Set" />
+            <!-- Body seti -->
+            <img src="https://images.pexels.com/photos/4599572/pexels-photo-4599572.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="Baby Body 3er-Pack" />
           </div>
           <h3>Bio-Baumwolle Body 3er-Pack</h3>
           <p class="product-desc">
@@ -612,7 +558,9 @@
 
         <article class="product-card">
           <div class="product-image">
-            <img src="https://images.pexels.com/photos/6585732/pexels-photo-6585732.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Baby Schlafsack" />
+            <!-- Schlafsack -->
+            <img src="https://images.pexels.com/photos/6585732/pexels-photo-6585732.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="Baby Schlafsack" />
           </div>
           <h3>Schlafsack mit Wärme</h3>
           <p class="product-desc">
@@ -627,7 +575,9 @@
 
         <article class="product-card">
           <div class="product-image">
-            <img src="https://images.pexels.com/photos/4599574/pexels-photo-4599574.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Body & Strampler Set" />
+            <!-- Body & Strampler -->
+            <img src="https://images.pexels.com/photos/4599574/pexels-photo-4599574.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="Body und Strampler Set" />
           </div>
           <h3>Body &amp; Strampler Set</h3>
           <p class="product-desc">
@@ -654,7 +604,9 @@
       <div class="product-grid">
         <article class="product-card">
           <div class="product-image">
-            <img src="https://images.pexels.com/photos/6898859/pexels-photo-6898859.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Bunter Sweatshirt" />
+            <!-- Sweatshirt giyen çocuk -->
+            <img src="https://images.pexels.com/photos/6898859/pexels-photo-6898859.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="Bunter Sweatshirt" />
           </div>
           <h3>Bunter Sweatshirt</h3>
           <p class="product-desc">
@@ -669,7 +621,9 @@
 
         <article class="product-card">
           <div class="product-image">
-            <img src="https://images.pexels.com/photos/6910476/pexels-photo-6910476.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="T-Shirt mit Print" />
+            <!-- Baskılı tişört giyen çocuk -->
+            <img src="https://images.pexels.com/photos/6910476/pexels-photo-6910476.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="T-Shirt mit Print" />
           </div>
           <h3>T-Shirt mit Print</h3>
           <p class="product-desc">
@@ -684,7 +638,9 @@
 
         <article class="product-card">
           <div class="product-image">
-            <img src="https://images.pexels.com/photos/8039858/pexels-photo-8039858.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Jogginghose" />
+            <!-- Jogginghose giyen çocuk -->
+            <img src="https://images.pexels.com/photos/8039858/pexels-photo-8039858.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="Jogginghose für Kinder" />
           </div>
           <h3>Jogginghose</h3>
           <p class="product-desc">
@@ -711,7 +667,9 @@
       <div class="product-grid">
         <article class="product-card">
           <div class="product-image">
-            <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Hoodie mit Kapuze" />
+            <!-- Hoodie giyen çocuk -->
+            <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="Hoodie mit Kapuze" />
           </div>
           <h3>Hoodie mit Kapuze</h3>
           <p class="product-desc">
@@ -726,7 +684,9 @@
 
         <article class="product-card">
           <div class="product-image">
-            <img src="https://images.pexels.com/photos/7691142/pexels-photo-7691142.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Denim Jeans" />
+            <!-- Kot pantolon giyen çocuk -->
+            <img src="https://images.pexels.com/photos/7691142/pexels-photo-7691142.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="Denim Jeans" />
           </div>
           <h3>Denim Jeans</h3>
           <p class="product-desc">
@@ -741,7 +701,9 @@
 
         <article class="product-card">
           <div class="product-image">
-            <img src="https://images.pexels.com/photos/8217462/pexels-photo-8217462.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sport-Set" />
+            <!-- Spor takım giyen çocuk -->
+            <img src="https://images.pexels.com/photos/8217462/pexels-photo-8217462.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 alt="Sport-Set für Kinder" />
           </div>
           <h3>Sport-Set</h3>
           <p class="product-desc">
