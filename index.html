@@ -5,7 +5,7 @@
   <title>Tomo1932 – Kinderbekleidung 0–12 Jahre</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- GÖMÜLÜ CSS: BAŞLANGIÇ -->
+  <!-- GÖMÜLÜ CSS (HER ŞEY TEK DOSYADA) -->
   <style>
     :root {
       --primary: #ff6b6b;
@@ -22,7 +22,6 @@
       --container-width: 1200px;
     }
 
-    /* Reset & Base */
     *,
     *::before,
     *::after {
@@ -221,11 +220,16 @@
     .hero-placeholder {
       background: #e5e7eb;
       border-radius: 20px;
-      padding: 40px 20px;
-      text-align: center;
-      color: #4b5563;
-      font-size: 14px;
+      padding: 0;
+      overflow: hidden;
       box-shadow: var(--shadow-soft);
+    }
+
+    .hero-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* Categories */
@@ -261,19 +265,15 @@
     }
 
     .category-image {
-      height: 90px;
+      height: 120px;
+      overflow: hidden;
     }
 
-    .cat-baby {
-      background: linear-gradient(135deg, #bfdbfe, #e0f2fe);
-    }
-
-    .cat-kids {
-      background: linear-gradient(135deg, #fed7aa, #fee2e2);
-    }
-
-    .cat-junior {
-      background: linear-gradient(135deg, #bbf7d0, #fef9c3);
+    .category-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .category-content {
@@ -333,23 +333,17 @@
 
     .product-image {
       border-radius: 8px;
-      height: 160px;
-      background: #e5e7eb;
+      overflow: hidden;
+      height: 180px;
       margin-bottom: 6px;
     }
 
-    /* Placeholder Farben */
-    .baby-1 { background: linear-gradient(135deg, #dbeafe, #e0f2fe); }
-    .baby-2 { background: linear-gradient(135deg, #fee2e2, #fecaca); }
-    .baby-3 { background: linear-gradient(135deg, #fef3c7, #fde68a); }
-
-    .kids-1 { background: linear-gradient(135deg, #bfdbfe, #c7d2fe); }
-    .kids-2 { background: linear-gradient(135deg, #fecaca, #fed7aa); }
-    .kids-3 { background: linear-gradient(135deg, #bbf7d0, #a7f3d0); }
-
-    .junior-1 { background: linear-gradient(135deg, #e9d5ff, #c4b5fd); }
-    .junior-2 { background: linear-gradient(135deg, #fef3c7, #facc15); }
-    .junior-3 { background: linear-gradient(135deg, #e5e7eb, #d1d5db); }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
     .product-card h3 {
       font-size: 14px;
@@ -493,9 +487,8 @@
       }
     }
   </style>
-  <!-- GÖMÜLÜ CSS: BİTİŞ -->
 </head>
-<body>
+<body id="top">
 
   <!-- TOP BAR -->
   <header class="top-bar">
@@ -518,6 +511,7 @@
       </div>
 
       <nav class="main-nav">
+        <a href="#top">Startseite</a>
         <a href="#baby">Baby 0–24 Monate</a>
         <a href="#kids">Kinder 2–6 Jahre</a>
         <a href="#junior">Junior 7–12 Jahre</a>
@@ -536,10 +530,9 @@
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-text">
-        <h1>Bunte &amp; bequeme Kinderbekleidung</h1>
+        <h1>Entdecke bunte Mode für Kinder von 0–12 Jahren</h1>
         <p>
-          Alltagstaugliche Mode für Babys und Kinder von 0–12 Jahren –
-          weiche Stoffe, fröhliche Farben, faire Preise.
+          Alltagstaugliche Mode für Babys und Kinder – weiche Stoffe, fröhliche Farben, faire Preise.
         </p>
         <div class="hero-buttons">
           <a href="#baby" class="btn primary">Baby-Kollektion entdecken</a>
@@ -548,7 +541,8 @@
       </div>
       <div class="hero-image">
         <div class="hero-placeholder">
-          Foto: lachende Kinder in bunter Kleidung
+          <!-- Telifsiz stock foto (Unsplash) -->
+          <img src="https://images.pexels.com/photos/4475921/pexels-photo-4475921.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Kinder in bunter Kleidung" />
         </div>
       </div>
     </div>
@@ -560,7 +554,9 @@
       <h2>Shoppe nach Kategorie</h2>
       <div class="category-grid">
         <a href="#baby" class="category-card">
-          <div class="category-image cat-baby"></div>
+          <div class="category-image">
+            <img src="https://images.pexels.com/photos/4599573/pexels-photo-4599573.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Babybekleidung" />
+          </div>
           <div class="category-content">
             <h3>Baby 0–24 Monate</h3>
             <p>Bodys, Strampler, Schlafsäcke &amp; Sets aus Bio-Baumwolle.</p>
@@ -568,7 +564,9 @@
         </a>
 
         <a href="#kids" class="category-card">
-          <div class="category-image cat-kids"></div>
+          <div class="category-image">
+            <img src="https://images.pexels.com/photos/3662845/pexels-photo-3662845.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Kinderbekleidung" />
+          </div>
           <div class="category-content">
             <h3>Kinder 2–6 Jahre</h3>
             <p>Kleider, Oberteile und Hosen für jeden Tag.</p>
@@ -576,7 +574,9 @@
         </a>
 
         <a href="#junior" class="category-card">
-          <div class="category-image cat-junior"></div>
+          <div class="category-image">
+            <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Junior Mode" />
+          </div>
           <div class="category-content">
             <h3>Junior 7–12 Jahre</h3>
             <p>Bequeme Outfits für Schule, Sport und Freizeit.</p>
@@ -596,7 +596,9 @@
 
       <div class="product-grid">
         <article class="product-card">
-          <div class="product-image baby-1"></div>
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/4599572/pexels-photo-4599572.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Baby Body Set" />
+          </div>
           <h3>Bio-Baumwolle Body 3er-Pack</h3>
           <p class="product-desc">
             Aus Bio-Baumwolle, sanft zur Haut – ideal für Neugeborene.
@@ -609,7 +611,9 @@
         </article>
 
         <article class="product-card">
-          <div class="product-image baby-2"></div>
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/6585732/pexels-photo-6585732.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Baby Schlafsack" />
+          </div>
           <h3>Schlafsack mit Wärme</h3>
           <p class="product-desc">
             Angenehme Wärme die ganze Nacht für ruhigen Babyschlaf.
@@ -622,7 +626,9 @@
         </article>
 
         <article class="product-card">
-          <div class="product-image baby-3"></div>
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/4599574/pexels-photo-4599574.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Body & Strampler Set" />
+          </div>
           <h3>Body &amp; Strampler Set</h3>
           <p class="product-desc">
             Fertig kombinierte Outfits für stressfreie Morgen.
@@ -647,7 +653,9 @@
 
       <div class="product-grid">
         <article class="product-card">
-          <div class="product-image kids-1"></div>
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/6898859/pexels-photo-6898859.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Bunter Sweatshirt" />
+          </div>
           <h3>Bunter Sweatshirt</h3>
           <p class="product-desc">
             Weiche Stoffe, fröhliche Farben – bequem für Schule und Spielplatz.
@@ -660,7 +668,9 @@
         </article>
 
         <article class="product-card">
-          <div class="product-image kids-2"></div>
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/6910476/pexels-photo-6910476.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="T-Shirt mit Print" />
+          </div>
           <h3>T-Shirt mit Print</h3>
           <p class="product-desc">
             Bunte und gemusterte Modelle für jeden Tag.
@@ -673,7 +683,9 @@
         </article>
 
         <article class="product-card">
-          <div class="product-image kids-3"></div>
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/8039858/pexels-photo-8039858.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Jogginghose" />
+          </div>
           <h3>Jogginghose</h3>
           <p class="product-desc">
             Robuste Stoffe und lässige Styles für aktive Kids.
@@ -698,7 +710,9 @@
 
       <div class="product-grid">
         <article class="product-card">
-          <div class="product-image junior-1"></div>
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Hoodie mit Kapuze" />
+          </div>
           <h3>Hoodie mit Kapuze</h3>
           <p class="product-desc">
             Perfekt für Schule, Sport und Freizeit.
@@ -711,7 +725,9 @@
         </article>
 
         <article class="product-card">
-          <div class="product-image junior-2"></div>
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/7691142/pexels-photo-7691142.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Denim Jeans" />
+          </div>
           <h3>Denim Jeans</h3>
           <p class="product-desc">
             Bequeme Passform, strapazierfähiger Stoff für jeden Tag.
@@ -724,7 +740,9 @@
         </article>
 
         <article class="product-card">
-          <div class="product-image junior-3"></div>
+          <div class="product-image">
+            <img src="https://images.pexels.com/photos/8217462/pexels-photo-8217462.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sport-Set" />
+          </div>
           <h3>Sport-Set</h3>
           <p class="product-desc">
             Für Schule, Sportverein und Freizeitaktivitäten.
