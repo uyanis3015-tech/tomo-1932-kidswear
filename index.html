@@ -3,770 +3,722 @@
 <head>
   <meta charset="UTF-8" />
   <title>Tomo1932 – Kinderbekleidung 0–12 Jahre</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --primary: #ff6b6b;
-      --primary-dark: #e85a5a;
-      --accent: #ffd166;
-      --text: #222222;
-      --muted: #777777;
-      --bg-light: #f9fafb;
-      --border: #e5e7eb;
-      --white: #ffffff;
-      --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.06);
-      --radius: 10px;
-      --transition: 0.2s ease;
-      --container-width: 1200px;
+      --primary: #ff7f50;
+      --secondary: #ffd166;
+      --bg: #fffaf5;
+      --text: #333333;
+      --accent: #4ecdc4;
+      --radius: 14px;
     }
 
-    *,
-    *::before,
-    *::after {
+    * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
+      margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
       color: var(--text);
-      background-color: #ffffff;
-      line-height: 1.5;
     }
 
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    .container {
-      max-width: var(--container-width);
-      margin: 0 auto;
-      padding: 0 16px;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    /* Top Bar */
-    .top-bar {
-      background: #111827;
-      color: #f9fafb;
-      font-size: 13px;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .top-bar-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 6px 0;
-    }
-
-    /* Header */
-    .main-header {
-      border-bottom: 1px solid var(--border);
-      background: #ffffff;
+    header {
+      border-bottom: 1px solid #f0e0d5;
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 10;
     }
 
-    .header-inner {
+    .topbar {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      color: #666;
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 16px 12px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-      gap: 24px;
+      gap: 16px;
     }
 
-    .logo-main {
+    .logo {
       font-weight: 700;
-      font-size: 22px;
+      letter-spacing: 0.05em;
+      font-size: 1.1rem;
       color: var(--primary);
     }
 
-    .logo-sub {
-      display: block;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: -2px;
-    }
-
-    .main-nav {
+    .nav-links {
       display: flex;
-      gap: 16px;
-      font-size: 14px;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.95rem;
     }
 
-    .main-nav a {
-      padding: 6px 10px;
-      border-radius: 999px;
-      transition: var(--transition);
-      color: #374151;
+    .nav-links a {
+      padding: 4px 0;
     }
 
-    .main-nav a:hover {
-      background: var(--bg-light);
-      color: #111827;
-    }
-
-    .header-actions {
+    .nav-actions {
+      margin-left: auto;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     .search-input {
+      border-radius: 999px;
+      border: 1px solid #e0d4c7;
       padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      font-size: 14px;
-      min-width: 180px;
+      font-size: 0.85rem;
+      min-width: 140px;
     }
 
-    .icon-button {
-      border: none;
-      background: #f3f4f6;
+    .icon-btn {
       border-radius: 999px;
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border: 1px solid #ffd9c4;
+      padding: 6px 10px;
+      font-size: 0.9rem;
+      background: #fff7f0;
       cursor: pointer;
-      transition: var(--transition);
     }
 
-    .icon-button:hover { background: #e5e7eb; }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
 
-    /* Hero */
+    /* HERO */
     .hero {
-      background: linear-gradient(135deg, #fff7ed, #e0f2fe);
-      padding: 32px 0 40px;
-    }
-
-    .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
       gap: 24px;
       align-items: center;
+      margin-bottom: 32px;
     }
 
-    .hero h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
+    .hero-text h1 {
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      margin: 0 0 10px;
     }
 
-    .hero p {
-      max-width: 460px;
-      color: #4b5563;
-      margin-bottom: 16px;
+    .hero-text p {
+      margin: 0 0 18px;
+      max-width: 32rem;
+      line-height: 1.5;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
-      gap: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .btn-primary {
+      background: var(--primary);
+      color: white;
       border-radius: 999px;
-      padding: 8px 16px;
-      font-size: 14px;
+      padding: 10px 18px;
       border: none;
+      font-size: 0.95rem;
       cursor: pointer;
-      transition: var(--transition);
-      font-weight: 500;
     }
 
-    .btn.primary { background: var(--primary); color: #ffffff; }
-    .btn.primary:hover { background: var(--primary-dark); }
-    .btn.secondary {
-      background: #ffffff;
-      color: #374151;
-      border: 1px solid var(--border);
+    .btn-secondary {
+      background: #fff;
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 10px 16px;
+      border: 1px solid #ffd9c4;
+      font-size: 0.95rem;
+      cursor: pointer;
     }
-    .btn.secondary:hover { background: #f9fafb; }
-    .btn.small { padding: 6px 12px; font-size: 13px; }
 
-    .hero-image { display: flex; justify-content: center; }
+    .hero-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+      font-size: 0.85rem;
+    }
 
-    .hero-placeholder {
-      background: #e5e7eb;
-      border-radius: 20px;
-      padding: 0;
+    .hero-badge {
+      background: #fff7ec;
+      border-radius: 999px;
+      padding: 6px 10px;
+      border: 1px dashed #ffd6b7;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: var(--shadow-soft);
+      background: linear-gradient(145deg, #ffe2c9, #fff5dd);
+      padding: 14px;
     }
 
-    .hero-placeholder img {
+    .hero-main-img {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .hero-main-img img {
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: cover;
       display: block;
     }
 
-    /* Categories */
-    .categories { padding: 32px 0; }
-    .categories h2 { font-size: 22px; margin-bottom: 16px; }
+    .hero-tag {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      background: #ffffffdd;
+      padding: 6px 10px;
+      font-size: 0.75rem;
+      border-radius: 999px;
+    }
+
+    .hero-note {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      background: #ffffffdd;
+      padding: 8px 10px;
+      font-size: 0.8rem;
+      border-radius: 12px;
+      max-width: 160px;
+    }
+
+    /* SHOP BY CATEGORY */
+    .section-title {
+      font-size: 1.1rem;
+      margin: 0 0 10px;
+    }
 
     .category-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
+      margin-bottom: 32px;
     }
 
     .category-card {
-      background: #ffffff;
       border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      min-height: 190px;
+      padding: 10px;
+      background: #ffffff;
+      box-shadow: 0 10px 18px rgba(0,0,0,0.04);
+      display: grid;
+      grid-template-rows: 160px auto;
+      gap: 8px;
     }
 
-    .category-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    .category-image {
-      height: 120px;
+    .category-img {
+      border-radius: 12px;
       overflow: hidden;
     }
 
-    .category-image img {
+    .category-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
-    .category-content {
-      padding: 12px 14px 14px;
+    .category-text h3 {
+      margin: 0 0 4px;
+      font-size: 1rem;
     }
 
-    .category-content h3 {
-      font-size: 16px;
-      margin-bottom: 4px;
+    .category-text p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
     }
 
-    .category-content p {
-      font-size: 13px;
-      color: #6b7280;
-    }
-
-    /* Product Sections */
-    .product-section { padding: 32px 0; }
-    .product-section.alt-bg { background: var(--bg-light); }
-
+    /* PRODUCT SECTIONS */
     .section-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 16px;
+      gap: 10px;
+      margin-bottom: 12px;
     }
 
-    .section-header h2 { font-size: 20px; }
-    .link-all { font-size: 14px; color: #2563eb; }
+    .section-header a {
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 16px;
+      margin-bottom: 28px;
     }
 
     .product-card {
       background: #ffffff;
       border-radius: var(--radius);
-      box-shadow: var(--shadow-soft);
-      padding: 10px 10px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+      padding: 10px;
+      box-shadow: 0 8px 14px rgba(0,0,0,0.04);
+      display: grid;
+      grid-template-rows: 180px auto;
+      gap: 8px;
     }
 
-    .product-image {
-      border-radius: 8px;
+    .product-img {
+      border-radius: 12px;
       overflow: hidden;
-      height: 180px;
-      margin-bottom: 6px;
+      background: #fff4ea;
     }
 
-    .product-image img {
+    .product-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
-    .product-card h3 { font-size: 14px; }
+    .product-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
 
     .product-desc {
-      font-size: 13px;
-      color: #6b7280;
-      min-height: 34px;
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 6px;
     }
 
-    .product-prices {
+    .price-row {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       gap: 8px;
-      margin-top: 2px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
     }
 
-    .old-price {
-      font-size: 13px;
+    .price-old {
       text-decoration: line-through;
-      color: #9ca3af;
+      color: #999;
     }
 
-    .new-price {
-      font-size: 15px;
+    .price-new {
+      color: #d8474c;
       font-weight: 600;
-      color: var(--primary-dark);
     }
 
-    /* Sale */
+    .add-btn {
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-size: 0.85rem;
+      padding: 7px 10px;
+      cursor: pointer;
+    }
+
+    /* SALE */
     .sale-section {
-      padding: 32px 0 40px;
-      background: #f3f4f6;
-    }
-
-    .sale-section h2 { font-size: 20px; margin-bottom: 16px; }
-
-    .sale-grid {
+      margin-top: 10px;
+      margin-bottom: 36px;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 16px;
     }
 
     .sale-card {
-      background: #ffffff;
+      background: #fff4ea;
       border-radius: var(--radius);
-      padding: 14px 16px;
-      box-shadow: var(--shadow-soft);
+      padding: 16px;
     }
 
-    .sale-card h3 { font-size: 16px; margin-bottom: 4px; }
+    .sale-card h3 {
+      margin: 0 0 6px;
+    }
 
-    /* Footer */
-    .site-footer {
-      background: #111827;
-      color: #e5e7eb;
-      padding-top: 24px;
-      margin-top: 8px;
+    .sale-card p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #f0e0d5;
+      padding: 20px 16px 30px;
+      background: #fff;
+      font-size: 0.9rem;
     }
 
     .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 24px;
-      padding-bottom: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
     }
 
-    .footer-col h4 {
-      font-size: 14px;
+    .footer-title {
+      font-weight: 600;
       margin-bottom: 8px;
     }
 
-    .footer-col p,
-    .footer-col li {
-      font-size: 13px;
-      color: #9ca3af;
+    .footer-links a {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
     }
-
-    .footer-col ul { list-style: none; }
-    .footer-col a { color: #e5e7eb; }
 
     .footer-bottom {
-      border-top: 1px solid #1f2937;
-      padding: 10px 0;
-      font-size: 12px;
-      text-align: center;
-      color: #6b7280;
+      max-width: 1120px;
+      margin: 14px auto 0;
+      font-size: 0.8rem;
+      color: #777;
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-
-      .category-grid,
-      .product-grid,
-      .sale-grid,
-      .footer-inner {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .main-nav { display: none; }
-
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .category-grid,
-      .product-grid,
-      .sale-grid,
-      .footer-inner {
+    @media (max-width: 768px) {
+      .hero {
         grid-template-columns: 1fr;
       }
-
-      .top-bar-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
+      .hero-image-wrap {
+        order: -1;
       }
-
-      .hero { padding-top: 20px; }
+      .nav {
+        flex-wrap: wrap;
+      }
+      .nav-actions {
+        width: 100%;
+        justify-content: flex-end;
+      }
     }
   </style>
 </head>
 <body id="top">
-
-  <!-- TOP BAR -->
-  <header class="top-bar">
-    <div class="container top-bar-inner">
-      <div class="top-bar-left">
-        Kostenlose Rückgabe · Schneller Versand · Sanfte Stoffe für empfindliche Kinderhaut
-      </div>
-      <div class="top-bar-right">
-        Hilfe &amp; Kontakt
-      </div>
+  <header>
+    <div class="topbar">
+      <span>Kostenlose Rückgabe · Schneller Versand · Sanfte Stoffe für empfindliche Kinderhaut</span>
+      <a href="#hilfe">Hilfe &amp; Kontakt</a>
     </div>
-  </header>
-
-  <!-- MAIN HEADER -->
-  <header class="main-header">
-    <div class="container header-inner">
-      <div class="logo">
-        <span class="logo-main">Tomo1932</span>
-        <span class="logo-sub">Kinder &amp; Baby</span>
-      </div>
-
-      <nav class="main-nav">
+    <div class="nav">
+      <div class="logo">Tomo1932</div>
+      <nav class="nav-links">
         <a href="#top">Startseite</a>
         <a href="#baby">Baby 0–24 Monate</a>
         <a href="#kids">Kinder 2–6 Jahre</a>
         <a href="#junior">Junior 7–12 Jahre</a>
         <a href="#sale">Sale</a>
       </nav>
-
-      <div class="header-actions">
-        <input type="text" class="search-input" placeholder="Suche nach Produkten..." />
-        <button class="icon-button" aria-label="Wunschliste">♥</button>
-        <button class="icon-button" aria-label="Warenkorb">🛒</button>
+      <div class="nav-actions">
+        <input class="search-input" type="search" placeholder="Suche nach Produkten..." aria-label="Suche nach Produkten" />
+        <button class="icon-btn">♥</button>
+        <button class="icon-btn">🛒</button>
       </div>
     </div>
   </header>
 
-  <!-- HERO: ÇOCUK GİYİM FOTO -->
-  <section class="hero">
-    <div class="container hero-inner">
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-text">
-        <h1>Bunte &amp; bequeme Kinderbekleidung</h1>
-        <p>
-          Alltagstaugliche Mode für Babys und Kinder – weiche Stoffe, fröhliche Farben, faire Preise.
-        </p>
-        <div class="hero-buttons">
-          <a href="#baby" class="btn primary">Baby-Kollektion entdecken</a>
-          <a href="#kids" class="btn secondary">Kinder-Kollektion entdecken</a>
+        <h1 id="hero-title">Bunte &amp; bequeme Kinderbekleidung</h1>
+        <p>Alltagstaugliche Mode für Babys und Kinder – weiche Stoffe, fröhliche Farben, faire Preise.</p>
+        <div class="hero-actions">
+          <a href="#baby"><button class="btn-primary">Baby-Kollektion entdecken</button></a>
+          <a href="#kids"><button class="btn-secondary">Kinder-Kollektion entdecken</button></a>
+        </div>
+        <div class="hero-badge-row">
+          <span class="hero-badge">Bio-Baumwolle</span>
+          <span class="hero-badge">Sanft zur Kinderhaut</span>
+          <span class="hero-badge">Größen 50–164</span>
         </div>
       </div>
-      <div class="hero-image">
-        <div class="hero-placeholder">
-          <!-- Çocuk modası: çocuklar ve kıyafetleri -->
-          <img src="https://images.pexels.com/photos/3662845/pexels-photo-3662845.jpeg?auto=compress&cs=tinysrgb&w=1200"
-               alt="Kinder in bunter Kleidung" />
+      <div class="hero-image-wrap" aria-hidden="true">
+        <span class="hero-tag">Neu: Frühlingskollektion</span>
+        <div class="hero-main-img">
+          <!-- ANA HERO GÖRSELİ -->
+          <img src="https://images.pexels.com/photos/1648374/pexels-photo-1648374.jpeg?w=800" alt="Lächelnde Kinder in bunter Kleidung" />
+        </div>
+        <div class="hero-note">
+          Kuschelige Sweatshirts, T‑Shirts und Hosen für Schule &amp; Spielplatz.
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- KATEGORİLER: BEBEK / ÇOCUK / JUNIOR -->
-  <section class="categories">
-    <div class="container">
-      <h2>Shoppe nach Kategorie</h2>
+    <!-- SHOP BY CATEGORY -->
+    <section aria-labelledby="shop-title">
+      <h2 id="shop-title" class="section-title">Shoppe nach Kategorie</h2>
       <div class="category-grid">
+        <!-- BABY KATEGORİ KARTI -->
         <a href="#baby" class="category-card">
-          <div class="category-image">
-            <!-- Bebek kıyafetleri -->
-            <img src="https://images.pexels.com/photos/4599573/pexels-photo-4599573.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                 alt="Babybekleidung" />
+          <div class="category-img">
+            <img src="https://images.pexels.com/photos/1648375/pexels-photo-1648375.jpeg?w=800" alt="Baby in einem bequemen Strampler" />
           </div>
-          <div class="category-content">
+          <div class="category-text">
             <h3>Baby 0–24 Monate</h3>
             <p>Bodys, Strampler, Schlafsäcke &amp; Sets aus Bio-Baumwolle.</p>
           </div>
         </a>
-
+        <!-- KIDS 2–6 KATEGORİ KARTI -->
         <a href="#kids" class="category-card">
-          <div class="category-image">
-            <!-- Küçük çocuklar, gündelik kıyafetler -->
-            <img src="https://images.pexels.com/photos/3662845/pexels-photo-3662845.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                 alt="Kinderbekleidung" />
+          <div class="category-img">
+            <img src="https://images.pexels.com/photos/3933024/pexels-photo-3933024.jpeg?w=800" alt="Kind mit bunter Kleidung auf dem Spielplatz" />
           </div>
-          <div class="category-content">
+          <div class="category-text">
             <h3>Kinder 2–6 Jahre</h3>
             <p>Kleider, Oberteile und Hosen für jeden Tag.</p>
           </div>
         </a>
-
+        <!-- JUNIOR 7–12 KATEGORİ KARTI -->
         <a href="#junior" class="category-card">
-          <div class="category-image">
-            <!-- Junior yaş grubu, günlük kombin -->
-            <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                 alt="Junior Mode" />
+          <div class="category-img">
+            <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?w=800" alt="Älteres Kind mit Hoodie und Jeans" />
           </div>
-          <div class="category-content">
+          <div class="category-text">
             <h3>Junior 7–12 Jahre</h3>
             <p>Bequeme Outfits für Schule, Sport und Freizeit.</p>
           </div>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- BABY -->
-  <section id="baby" class="product-section">
-    <div class="container">
+    <!-- BABY 0–24 MONATE -->
+    <section id="baby" aria-labelledby="baby-title">
       <div class="section-header">
-        <h2>Babybekleidung 0–24 Monate</h2>
-        <a href="#" class="link-all">Alle Baby-Artikel anzeigen</a>
+        <h2 id="baby-title" class="section-title">Babybekleidung 0–24 Monate</h2>
+        <a href="#">Alle Baby-Artikel anzeigen</a>
       </div>
-
       <div class="product-grid">
+        <!-- ÜRÜN 1 -->
         <article class="product-card">
-          <div class="product-image">
-            <!-- Body seti -->
-            <img src="https://images.pexels.com/photos/4599572/pexels-photo-4599572.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                 alt="Baby Body 3er-Pack" />
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/3875220/pexels-photo-3875220.jpeg?w=800" alt="Baby-Bodies in Pastellfarben" />
           </div>
-          <h3>Bio-Baumwolle Body 3er-Pack</h3>
-          <p class="product-desc">
-            Aus Bio-Baumwolle, sanft zur Haut – ideal für Neugeborene.
-          </p>
-          <div class="product-prices">
-            <span class="old-price">49,90 €</span>
-            <span class="new-price">34,90 €</span>
+          <div>
+            <div class="product-name">Bio-Baumwolle Body 3er-Pack</div>
+            <div class="product-desc">Aus Bio-Baumwolle, sanft zur Haut – ideal für Neugeborene.</div>
+            <div class="price-row">
+              <span class="price-old">49,90 €</span>
+              <span class="price-new">34,90 €</span>
+            </div>
+            <button class="add-btn">In den Warenkorb</button>
           </div>
-          <button class="btn small">In den Warenkorb</button>
         </article>
 
+        <!-- ÜRÜN 2 -->
         <article class="product-card">
-          <div class="product-image">
-            <!-- Schlafsack -->
-            <img src="https://images.pexels.com/photos/6585732/pexels-photo-6585732.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                 alt="Baby Schlafsack" />
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/2797865/pexels-photo-2797865.jpeg?w=800" alt="Baby im warmen Schlafsack" />
           </div>
-          <h3>Schlafsack mit Wärme</h3>
-          <p class="product-desc">
-            Angenehme Wärme die ganze Nacht für ruhigen Babyschlaf.
-          </p>
-          <div class="product-prices">
-            <span class="old-price">59,90 €</span>
-            <span class="new-price">42,90 €</span>
+          <div>
+            <div class="product-name">Schlafsack mit Wärme</div>
+            <div class="product-desc">Angenehme Wärme die ganze Nacht für ruhigen Babyschlaf.</div>
+            <div class="price-row">
+              <span class="price-old">59,90 €</span>
+              <span class="price-new">42,90 €</span>
+            </div>
+            <button class="add-btn">In den Warenkorb</button>
           </div>
-          <button class="btn small">In den Warenkorb</button>
         </article>
 
+        <!-- ÜRÜN 3 -->
         <article class="product-card">
-          <div class="product-image">
-            <!-- Body & Strampler -->
-            <img src="https://images.pexels.com/photos/4599574/pexels-photo-4599574.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                 alt="Body und Strampler Set" />
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/1648374/pexels-photo-1648374.jpeg?w=800" alt="Baby im Set aus Body und Strampler" />
           </div>
-          <h3>Body &amp; Strampler Set</h3>
-          <p class="product-desc">
-            Fertig kombinierte Outfits für stressfreie Morgen.
-          </p>
-          <div class="product-prices">
-            <span class="old-price">69,90 €</span>
-            <span class="new-price">48,90 €</span>
+          <div>
+            <div class="product-name">Body &amp; Strampler Set</div>
+            <div class="product-desc">Fertig kombinierte Outfits für stressfreie Morgen.</div>
+            <div class="price-row">
+              <span class="price-old">69,90 €</span>
+              <span class="price-new">48,90 €</span>
+            </div>
+            <button class="add-btn">In den Warenkorb</button>
           </div>
-          <button class="btn small">In den Warenkorb</button>
         </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- KINDER -->
-  <section id="kids" class="product-section alt-bg">
-    <div class="container">
+    <!-- KINDER 2–6 JAHRE -->
+    <section id="kids" aria-labelledby="kids-title">
       <div class="section-header">
-        <h2>Kinderbekleidung 2–6 Jahre</h2>
-        <a href="#" class="link-all">Alle Kinder-Artikel anzeigen</a>
+        <h2 id="kids-title" class="section-title">Kinderbekleidung 2–6 Jahre</h2>
+        <a href="#">Alle Kinder-Artikel anzeigen</a>
       </div>
-
       <div class="product-grid">
+        <!-- SWEATSHIRT -->
         <article class="product-card">
-          <div class="product-image">
-            <!-- Sweatshirt giyen çocuk -->
-            <img src="https://images.pexels.com/photos/6898859/pexels-photo-6898859.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                 alt="Bunter Sweatshirt" />
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/3933024/pexels-photo-3933024.jpeg?w=800" alt="Kind mit buntem Sweatshirt" />
           </div>
-          <h3>Bunter Sweatshirt</h3>
-          <p class="product-desc">
-            Weiche Stoffe, fröhliche Farben – bequem für Schule und Spielplatz.
-          </p>
-          <div class="product-prices">
-            <span class="old-price">54,90 €</span>
-            <span class="new-price">39,90 €</span>
+          <div>
+            <div class="product-name">Bunter Sweatshirt</div>
+            <div class="product-desc">Weiche Stoffe, fröhliche Farben – bequem für Schule und Spielplatz.</div>
+            <div class="price-row">
+              <span class="price-old">54,90 €</span>
+              <span class="price-new">39,90 €</span>
+            </div>
+            <button class="add-btn">In den Warenkorb</button>
           </div>
-          <button class="btn small">In den Warenkorb</button>
         </article>
 
+        <!-- T-SHIRT -->
         <article class="product-card">
-          <div class="product-image">
-            <!-- Baskılı tişört giyen çocuk -->
-            <img src="https://images.pexels.com/photos/6910476/pexels-photo-6910476.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                 alt="T-Shirt mit Print" />
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/3662770/pexels-photo-3662770.jpeg?w=800" alt="Kind mit T‑Shirt mit buntem Print" />
           </div>
-          <h3>T-Shirt mit Print</h3>
-          <p class="product-desc">
-            Bunte und gemusterte Modelle für jeden Tag.
-          </p>
-          <div class="product-prices">
-            <span class="old-price">29,90 €</span>
-            <span class="new-price">19,90 €</span>
+          <div>
+            <div class="product-name">T-Shirt mit Print</div>
+            <div class="product-desc">Bunte und gemusterte Modelle für jeden Tag.</div>
+            <div class="price-row">
+              <span class="price-old">29,90 €</span>
+              <span class="price-new">19,90 €</span>
+            </div>
+            <button class="add-btn">In den Warenkorb</button>
           </div>
-          <button class="btn small">In den Warenkorb</button>
         </article>
 
+        <!-- JOGGINGHOSE -->
         <article class="product-card">
-          <div class="product-image">
-            <!-- Jogginghose giyen çocuk -->
-            <img src="https://images.pexels.com/photos/8039858/pexels-photo-8039858.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                 alt="Jogginghose für Kinder" />
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/3661393/pexels-photo-3661393.jpeg?w=800" alt="Kind in Jogginghose beim Spielen" />
           </div>
-          <h3>Jogginghose</h3>
-          <p class="product-desc">
-            Robuste Stoffe und lässige Styles für aktive Kids.
-          </p>
-          <div class="product-prices">
-            <span class="old-price">39,90 €</span>
-            <span class="new-price">27,90 €</span>
+          <div>
+            <div class="product-name">Jogginghose</div>
+            <div class="product-desc">Robuste Stoffe und lässige Styles für aktive Kids.</div>
+            <div class="price-row">
+              <span class="price-old">39,90 €</span>
+              <span class="price-new">27,90 €</span>
+            </div>
+            <button class="add-btn">In den Warenkorb</button>
           </div>
-          <button class="btn small">In den Warenkorb</button>
         </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- JUNIOR -->
-  <section id="junior" class="product-section">
-    <div class="container">
+    <!-- JUNIOR 7–12 JAHRE -->
+    <section id="junior" aria-labelledby="junior-title">
       <div class="section-header">
-        <h2>Junior 7–12 Jahre</h2>
-        <a href="#" class="link-all">Alle Junior-Artikel anzeigen</a>
+        <h2 id="junior-title" class="section-title">Junior 7–12 Jahre</h2>
+        <a href="#">Alle Junior-Artikel anzeigen</a>
       </div>
-
       <div class="product-grid">
+        <!-- HOODIE -->
         <article class="product-card">
-          <div class="product-image">
-            <!-- Hoodie giyen çocuk -->
-            <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                 alt="Hoodie mit Kapuze" />
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?w=800" alt="Kind mit Hoodie" />
           </div>
-          <h3>Hoodie mit Kapuze</h3>
-          <p class="product-desc">
-            Perfekt für Schule, Sport und Freizeit.
-          </p>
-          <div class="product-prices">
-            <span class="old-price">59,90 €</span>
-            <span class="new-price">44,90 €</span>
+          <div>
+            <div class="product-name">Hoodie mit Kapuze</div>
+            <div class="product-desc">Perfekt für Schule, Sport und Freizeit.</div>
+            <div class="price-row">
+              <span class="price-old">59,90 €</span>
+              <span class="price-new">44,90 €</span>
+            </div>
+            <button class="add-btn">In den Warenkorb</button>
           </div>
-          <button class="btn small">In den Warenkorb</button>
         </article>
 
+        <!-- JEANS -->
         <article class="product-card">
-          <div class="product-image">
-            <!-- Kot pantolon giyen çocuk -->
-            <img src="https://images.pexels.com/photos/7691142/pexels-photo-7691142.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                 alt="Denim Jeans" />
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/6146970/pexels-photo-6146970.jpeg?w=800" alt="Junior mit Denim Jeans" />
           </div>
-          <h3>Denim Jeans</h3>
-          <p class="product-desc">
-            Bequeme Passform, strapazierfähiger Stoff für jeden Tag.
-          </p>
-          <div class="product-prices">
-            <span class="old-price">49,90 €</span>
-            <span class="new-price">34,90 €</span>
+          <div>
+            <div class="product-name">Denim Jeans</div>
+            <div class="product-desc">Bequeme Passform, strapazierfähiger Stoff für jeden Tag.</div>
+            <div class="price-row">
+              <span class="price-old">49,90 €</span>
+              <span class="price-new">34,90 €</span>
+            </div>
+            <button class="add-btn">In den Warenkorb</button>
           </div>
-          <button class="btn small">In den Warenkorb</button>
         </article>
 
+        <!-- SPORT-SET -->
         <article class="product-card">
-          <div class="product-image">
-            <!-- Spor takım giyen çocuk -->
-            <img src="https://images.pexels.com/photos/8217462/pexels-photo-8217462.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                 alt="Sport-Set für Kinder" />
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/3661187/pexels-photo-3661187.jpeg?w=800" alt="Kind im Sport‑Set" />
           </div>
-          <h3>Sport-Set</h3>
-          <p class="product-desc">
-            Für Schule, Sportverein und Freizeitaktivitäten.
-          </p>
-          <div class="product-prices">
-            <span class="old-price">69,90 €</span>
-            <span class="new-price">49,90 €</span>
+          <div>
+            <div class="product-name">Sport-Set</div>
+            <div class="product-desc">Für Schule, Sportverein und Freizeitaktivitäten.</div>
+            <div class="price-row">
+              <span class="price-old">69,90 €</span>
+              <span class="price-new">49,90 €</span>
+            </div>
+            <button class="add-btn">In den Warenkorb</button>
           </div>
-          <button class="btn small">In den Warenkorb</button>
         </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SALE -->
-  <section id="sale" class="sale-section">
-    <div class="container">
-      <h2>Aktionen &amp; Sale</h2>
-      <div class="sale-grid">
+    <!-- SALE -->
+    <section id="sale" aria-labelledby="sale-title">
+      <h2 id="sale-title" class="section-title">Aktionen &amp; Sale</h2>
+      <div class="sale-section">
         <div class="sale-card">
           <h3>3 kaufen, 2 bezahlen</h3>
-          <p>Gilt auf ausgewählte Bodys &amp; T-Shirts in der Baby-Kategorie.</p>
+          <p>Gilt auf ausgewählte Bodys &amp; T‑Shirts in der Baby-Kategorie.</p>
         </div>
         <div class="sale-card">
           <h3>Bis zu -30 %</h3>
           <p>Auf ausgewählte Sweatshirts, Hosen und Jacken.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-col">
-        <h4>Tomo1932</h4>
-        <p>
-          Bunte, bequeme und alltagstaugliche Kinderbekleidung
-          für Familien in Deutschland.
-        </p>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-title">Tomo1932</div>
+        <p>Bunte, bequeme und alltagstaugliche Kinderbekleidung für Familien in Deutschland.</p>
       </div>
-      <div class="footer-col">
-        <h4>Service</h4>
-        <ul>
-          <li><a href="#">Versand &amp; Lieferung</a></li>
-          <li><a href="#">Retouren &amp; Umtausch</a></li>
-          <li><a href="#">FAQ</a></li>
-        </ul>
+      <div>
+        <div class="footer-title">Service</div>
+        <div class="footer-links">
+          <a href="#">Versand &amp; Lieferung</a>
+          <a href="#">Retouren &amp; Umtausch</a>
+          <a href="#" id="hilfe">FAQ &amp; Hilfe</a>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Rechtliches</h4>
-        <ul>
-          <li><a href="#">Impressum</a></li>
-          <li><a href="#">Datenschutz</a></li>
-          <li><a href="#">AGB</a></li>
-        </ul>
+      <div>
+        <div class="footer-title">Rechtliches</div>
+        <div class="footer-links">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+          <a href="#">AGB</a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
       © 2025 Tomo1932 – Alle Rechte vorbehalten.
     </div>
   </footer>
-
 </body>
 </html>
