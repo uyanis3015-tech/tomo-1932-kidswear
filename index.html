@@ -1,724 +1,156 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <title>Tomo1932 – Kinderbekleidung 0–12 Jahre</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --primary: #ff7f50;
-      --secondary: #ffd166;
-      --bg: #fffaf5;
-      --text: #333333;
-      --accent: #4ecdc4;
-      --radius: 14px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    header {
-      border-bottom: 1px solid #f0e0d5;
-      background: #ffffffcc;
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .topbar {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 6px 16px;
-      font-size: 0.85rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      color: #666;
-    }
-
-    .nav {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 10px 16px 12px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      font-size: 1.1rem;
-      color: var(--primary);
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a {
-      padding: 4px 0;
-    }
-
-    .nav-actions {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .search-input {
-      border-radius: 999px;
-      border: 1px solid #e0d4c7;
-      padding: 6px 10px;
-      font-size: 0.85rem;
-      min-width: 140px;
-    }
-
-    .icon-btn {
-      border-radius: 999px;
-      border: 1px solid #ffd9c4;
-      padding: 6px 10px;
-      font-size: 0.9rem;
-      background: #fff7f0;
-      cursor: pointer;
-    }
-
-    main {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 20px 16px 40px;
-    }
-
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 24px;
-      align-items: center;
-      margin-bottom: 32px;
-    }
-
-    .hero-text h1 {
-      font-size: clamp(2rem, 3vw, 2.5rem);
-      margin: 0 0 10px;
-    }
-
-    .hero-text p {
-      margin: 0 0 18px;
-      max-width: 32rem;
-      line-height: 1.5;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-      border-radius: 999px;
-      padding: 10px 18px;
-      border: none;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
-
-    .btn-secondary {
-      background: #fff;
-      color: var(--primary);
-      border-radius: 999px;
-      padding: 10px 16px;
-      border: 1px solid #ffd9c4;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
-
-    .hero-badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-      font-size: 0.85rem;
-    }
-
-    .hero-badge {
-      background: #fff7ec;
-      border-radius: 999px;
-      padding: 6px 10px;
-      border: 1px dashed #ffd6b7;
-    }
-
-    .hero-image-wrap {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      background: linear-gradient(145deg, #ffe2c9, #fff5dd);
-      padding: 14px;
-    }
-
-    .hero-main-img {
-      border-radius: 18px;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .hero-main-img img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-tag {
-      position: absolute;
-      left: 16px;
-      top: 16px;
-      background: #ffffffdd;
-      padding: 6px 10px;
-      font-size: 0.75rem;
-      border-radius: 999px;
-    }
-
-    .hero-note {
-      position: absolute;
-      right: 16px;
-      bottom: 16px;
-      background: #ffffffdd;
-      padding: 8px 10px;
-      font-size: 0.8rem;
-      border-radius: 12px;
-      max-width: 160px;
-    }
-
-    /* SHOP BY CATEGORY */
-    .section-title {
-      font-size: 1.1rem;
-      margin: 0 0 10px;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    .category-card {
-      border-radius: var(--radius);
-      padding: 10px;
-      background: #ffffff;
-      box-shadow: 0 10px 18px rgba(0,0,0,0.04);
-      display: grid;
-      grid-template-rows: 160px auto;
-      gap: 8px;
-    }
-
-    .category-img {
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .category-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .category-text h3 {
-      margin: 0 0 4px;
-      font-size: 1rem;
-    }
-
-    .category-text p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    /* PRODUCT SECTIONS */
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .section-header a {
-      font-size: 0.9rem;
-      color: var(--primary);
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-
-    .product-card {
-      background: #ffffff;
-      border-radius: var(--radius);
-      padding: 10px;
-      box-shadow: 0 8px 14px rgba(0,0,0,0.04);
-      display: grid;
-      grid-template-rows: 180px auto;
-      gap: 8px;
-    }
-
-    .product-img {
-      border-radius: 12px;
-      overflow: hidden;
-      background: #fff4ea;
-    }
-
-    .product-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .product-name {
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-bottom: 4px;
-    }
-
-    .product-desc {
-      font-size: 0.85rem;
-      color: #555;
-      margin-bottom: 6px;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-    }
-
-    .price-old {
-      text-decoration: line-through;
-      color: #999;
-    }
-
-    .price-new {
-      color: #d8474c;
-      font-weight: 600;
-    }
-
-    .add-btn {
-      border-radius: 999px;
-      border: none;
-      background: var(--accent);
-      color: white;
-      font-size: 0.85rem;
-      padding: 7px 10px;
-      cursor: pointer;
-    }
-
-    /* SALE */
-    .sale-section {
-      margin-top: 10px;
-      margin-bottom: 36px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
-
-    .sale-card {
-      background: #fff4ea;
-      border-radius: var(--radius);
-      padding: 16px;
-    }
-
-    .sale-card h3 {
-      margin: 0 0 6px;
-    }
-
-    .sale-card p {
-      margin: 0;
-      font-size: 0.9rem;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid #f0e0d5;
-      padding: 20px 16px 30px;
-      background: #fff;
-      font-size: 0.9rem;
-    }
-
-    .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 20px;
-    }
-
-    .footer-title {
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .footer-links a {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.9rem;
-    }
-
-    .footer-bottom {
-      max-width: 1120px;
-      margin: 14px auto 0;
-      font-size: 0.8rem;
-      color: #777;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .hero-image-wrap {
-        order: -1;
-      }
-      .nav {
-        flex-wrap: wrap;
-      }
-      .nav-actions {
-        width: 100%;
-        justify-content: flex-end;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomomo1932 - Bunte Kinderbekleidung 0-10 Jahre</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; color: #333; background: #f8f9fa; }
+        header { background: linear-gradient(135deg, #4a90e2, #ff6b9d); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 2rem; font-weight: bold; margin-left: 2rem; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        nav ul { display: flex; list-style: none; }
+        nav li { margin: 0 1rem; }
+        nav a { color: white; text-decoration: none; }
+        .hero { background: url('https://images.unsplash.com/photo-1610400323987-89e045cb85d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero h1 { font-size: 3rem; }
+        .hero p { font-size: 1.5rem; }
+        section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+        h2 { text-align: center; margin-bottom: 3rem; color: #4a90e2; }
+        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .product { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .product:hover { transform: translateY(-5px); }
+        .product img { width: 100%; height: 250px; object-fit: cover; }
+        .product-info { padding: 1.5rem; }
+        .price { font-size: 1.2rem; font-weight: bold; color: #ff6b9d; }
+        .old-price { text-decoration: line-through; color: #999; margin-left: 0.5rem; }
+        .btn { background: #ff6b9d; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 1rem; }
+        .btn:hover { background: #e55a86; }
+        footer { background: #333; color: white; text-align: center; padding: 2rem; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { flex-direction: column; } }
+    </style>
 </head>
-<body id="top">
-  <header>
-    <div class="topbar">
-      <span>Kostenlose Rückgabe · Schneller Versand · Sanfte Stoffe für empfindliche Kinderhaut</span>
-      <a href="#hilfe">Hilfe &amp; Kontakt</a>
-    </div>
-    <div class="nav">
-      <div class="logo">Tomo1932</div>
-      <nav class="nav-links">
-        <a href="#top">Startseite</a>
-        <a href="#baby">Baby 0–24 Monate</a>
-        <a href="#kids">Kinder 2–6 Jahre</a>
-        <a href="#junior">Junior 7–12 Jahre</a>
-        <a href="#sale">Sale</a>
-      </nav>
-      <div class="nav-actions">
-        <input class="search-input" type="search" placeholder="Suche nach Produkten..." aria-label="Suche nach Produkten" />
-        <button class="icon-btn">♥</button>
-        <button class="icon-btn">🛒</button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-text">
-        <h1 id="hero-title">Bunte &amp; bequeme Kinderbekleidung</h1>
-        <p>Alltagstaugliche Mode für Babys und Kinder – weiche Stoffe, fröhliche Farben, faire Preise.</p>
-        <div class="hero-actions">
-          <a href="#baby"><button class="btn-primary">Baby-Kollektion entdecken</button></a>
-          <a href="#kids"><button class="btn-secondary">Kinder-Kollektion entdecken</button></a>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Tomomo1932 KidsWear</div>
+            <ul>
+                <li><a href="#baby">Baby</a></li>
+                <li><a href="#maedchen">Mädchen</a></li>
+                <li><a href="#jungen">Jungen</a></li>
+                <li><a href="#schulmode">Schulmode</a></li>
+                <li><a href="#warenkorb">Warenkorb</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div>
+            <h1>Tomomo1932</h1>
+            <p>Bunte & bequeme Kinderbekleidung für 0-10 Jahre</p>
         </div>
-        <div class="hero-badge-row">
-          <span class="hero-badge">Bio-Baumwolle</span>
-          <span class="hero-badge">Sanft zur Kinderhaut</span>
-          <span class="hero-badge">Größen 50–164</span>
-        </div>
-      </div>
-      <div class="hero-image-wrap" aria-hidden="true">
-        <span class="hero-tag">Neu: Frühlingskollektion</span>
-        <div class="hero-main-img">
-          <!-- ANA HERO GÖRSELİ -->
-          <img src="https://images.pexels.com/photos/1648374/pexels-photo-1648374.jpeg?w=800" alt="Lächelnde Kinder in bunter Kleidung" />
-        </div>
-        <div class="hero-note">
-          Kuschelige Sweatshirts, T‑Shirts und Hosen für Schule &amp; Spielplatz.
-        </div>
-      </div>
     </section>
-
-    <!-- SHOP BY CATEGORY -->
-    <section aria-labelledby="shop-title">
-      <h2 id="shop-title" class="section-title">Shoppe nach Kategorie</h2>
-      <div class="category-grid">
-        <!-- BABY KATEGORİ KARTI -->
-        <a href="#baby" class="category-card">
-          <div class="category-img">
-            <img src="https://images.pexels.com/photos/1648375/pexels-photo-1648375.jpeg?w=800" alt="Baby in einem bequemen Strampler" />
-          </div>
-          <div class="category-text">
-            <h3>Baby 0–24 Monate</h3>
-            <p>Bodys, Strampler, Schlafsäcke &amp; Sets aus Bio-Baumwolle.</p>
-          </div>
-        </a>
-        <!-- KIDS 2–6 KATEGORİ KARTI -->
-        <a href="#kids" class="category-card">
-          <div class="category-img">
-            <img src="https://images.pexels.com/photos/3933024/pexels-photo-3933024.jpeg?w=800" alt="Kind mit bunter Kleidung auf dem Spielplatz" />
-          </div>
-          <div class="category-text">
-            <h3>Kinder 2–6 Jahre</h3>
-            <p>Kleider, Oberteile und Hosen für jeden Tag.</p>
-          </div>
-        </a>
-        <!-- JUNIOR 7–12 KATEGORİ KARTI -->
-        <a href="#junior" class="category-card">
-          <div class="category-img">
-            <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?w=800" alt="Älteres Kind mit Hoodie und Jeans" />
-          </div>
-          <div class="category-text">
-            <h3>Junior 7–12 Jahre</h3>
-            <p>Bequeme Outfits für Schule, Sport und Freizeit.</p>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- BABY 0–24 MONATE -->
-    <section id="baby" aria-labelledby="baby-title">
-      <div class="section-header">
-        <h2 id="baby-title" class="section-title">Babybekleidung 0–24 Monate</h2>
-        <a href="#">Alle Baby-Artikel anzeigen</a>
-      </div>
-      <div class="product-grid">
-        <!-- ÜRÜN 1 -->
-        <article class="product-card">
-          <div class="product-img">
-            <img src="https://images.pexels.com/photos/3875220/pexels-photo-3875220.jpeg?w=800" alt="Baby-Bodies in Pastellfarben" />
-          </div>
-          <div>
-            <div class="product-name">Bio-Baumwolle Body 3er-Pack</div>
-            <div class="product-desc">Aus Bio-Baumwolle, sanft zur Haut – ideal für Neugeborene.</div>
-            <div class="price-row">
-              <span class="price-old">49,90 €</span>
-              <span class="price-new">34,90 €</span>
+    
+    <section id="baby">
+        <h2>Baby (0-24 Monate)</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1588880365067-0d5a499e5b90?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Strampler">
+                <div class="product-info">
+                    <h3>Bunter Strampler</h3>
+                    <p>Aus Bio-Baumwolle, sanft zur Haut.</p>
+                    <div class="price">34,90 € <span class="old-price">49,90 €</span></div>
+                    <button class="btn">In den Warenkorb</button>
+                </div>
             </div>
-            <button class="add-btn">In den Warenkorb</button>
-          </div>
-        </article>
-
-        <!-- ÜRÜN 2 -->
-        <article class="product-card">
-          <div class="product-img">
-            <img src="https://images.pexels.com/photos/2797865/pexels-photo-2797865.jpeg?w=800" alt="Baby im warmen Schlafsack" />
-          </div>
-          <div>
-            <div class="product-name">Schlafsack mit Wärme</div>
-            <div class="product-desc">Angenehme Wärme die ganze Nacht für ruhigen Babyschlaf.</div>
-            <div class="price-row">
-              <span class="price-old">59,90 €</span>
-              <span class="price-new">42,90 €</span>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1617178390306-8d98ab7bd2e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Schlafsack">
+                <div class="product-info">
+                    <h3>Schlafsack</h3>
+                    <p>Angenehme Wärme die ganze Nacht.</p>
+                    <div class="price">42,90 € <span class="old-price">59,90 €</span></div>
+                    <button class="btn">In den Warenkorb</button>
+                </div>
             </div>
-            <button class="add-btn">In den Warenkorb</button>
-          </div>
-        </article>
-
-        <!-- ÜRÜN 3 -->
-        <article class="product-card">
-          <div class="product-img">
-            <img src="https://images.pexels.com/photos/1648374/pexels-photo-1648374.jpeg?w=800" alt="Baby im Set aus Body und Strampler" />
-          </div>
-          <div>
-            <div class="product-name">Body &amp; Strampler Set</div>
-            <div class="product-desc">Fertig kombinierte Outfits für stressfreie Morgen.</div>
-            <div class="price-row">
-              <span class="price-old">69,90 €</span>
-              <span class="price-new">48,90 €</span>
-            </div>
-            <button class="add-btn">In den Warenkorb</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- KINDER 2–6 JAHRE -->
-    <section id="kids" aria-labelledby="kids-title">
-      <div class="section-header">
-        <h2 id="kids-title" class="section-title">Kinderbekleidung 2–6 Jahre</h2>
-        <a href="#">Alle Kinder-Artikel anzeigen</a>
-      </div>
-      <div class="product-grid">
-        <!-- SWEATSHIRT -->
-        <article class="product-card">
-          <div class="product-img">
-            <img src="https://images.pexels.com/photos/3933024/pexels-photo-3933024.jpeg?w=800" alt="Kind mit buntem Sweatshirt" />
-          </div>
-          <div>
-            <div class="product-name">Bunter Sweatshirt</div>
-            <div class="product-desc">Weiche Stoffe, fröhliche Farben – bequem für Schule und Spielplatz.</div>
-            <div class="price-row">
-              <span class="price-old">54,90 €</span>
-              <span class="price-new">39,90 €</span>
-            </div>
-            <button class="add-btn">In den Warenkorb</button>
-          </div>
-        </article>
-
-        <!-- T-SHIRT -->
-        <article class="product-card">
-          <div class="product-img">
-            <img src="https://images.pexels.com/photos/3662770/pexels-photo-3662770.jpeg?w=800" alt="Kind mit T‑Shirt mit buntem Print" />
-          </div>
-          <div>
-            <div class="product-name">T-Shirt mit Print</div>
-            <div class="product-desc">Bunte und gemusterte Modelle für jeden Tag.</div>
-            <div class="price-row">
-              <span class="price-old">29,90 €</span>
-              <span class="price-new">19,90 €</span>
-            </div>
-            <button class="add-btn">In den Warenkorb</button>
-          </div>
-        </article>
-
-        <!-- JOGGINGHOSE -->
-        <article class="product-card">
-          <div class="product-img">
-            <img src="https://images.pexels.com/photos/3661393/pexels-photo-3661393.jpeg?w=800" alt="Kind in Jogginghose beim Spielen" />
-          </div>
-          <div>
-            <div class="product-name">Jogginghose</div>
-            <div class="product-desc">Robuste Stoffe und lässige Styles für aktive Kids.</div>
-            <div class="price-row">
-              <span class="price-old">39,90 €</span>
-              <span class="price-new">27,90 €</span>
-            </div>
-            <button class="add-btn">In den Warenkorb</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- JUNIOR 7–12 JAHRE -->
-    <section id="junior" aria-labelledby="junior-title">
-      <div class="section-header">
-        <h2 id="junior-title" class="section-title">Junior 7–12 Jahre</h2>
-        <a href="#">Alle Junior-Artikel anzeigen</a>
-      </div>
-      <div class="product-grid">
-        <!-- HOODIE -->
-        <article class="product-card">
-          <div class="product-img">
-            <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?w=800" alt="Kind mit Hoodie" />
-          </div>
-          <div>
-            <div class="product-name">Hoodie mit Kapuze</div>
-            <div class="product-desc">Perfekt für Schule, Sport und Freizeit.</div>
-            <div class="price-row">
-              <span class="price-old">59,90 €</span>
-              <span class="price-new">44,90 €</span>
-            </div>
-            <button class="add-btn">In den Warenkorb</button>
-          </div>
-        </article>
-
-        <!-- JEANS -->
-        <article class="product-card">
-          <div class="product-img">
-            <img src="https://images.pexels.com/photos/6146970/pexels-photo-6146970.jpeg?w=800" alt="Junior mit Denim Jeans" />
-          </div>
-          <div>
-            <div class="product-name">Denim Jeans</div>
-            <div class="product-desc">Bequeme Passform, strapazierfähiger Stoff für jeden Tag.</div>
-            <div class="price-row">
-              <span class="price-old">49,90 €</span>
-              <span class="price-new">34,90 €</span>
-            </div>
-            <button class="add-btn">In den Warenkorb</button>
-          </div>
-        </article>
-
-        <!-- SPORT-SET -->
-        <article class="product-card">
-          <div class="product-img">
-            <img src="https://images.pexels.com/photos/3661187/pexels-photo-3661187.jpeg?w=800" alt="Kind im Sport‑Set" />
-          </div>
-          <div>
-            <div class="product-name">Sport-Set</div>
-            <div class="product-desc">Für Schule, Sportverein und Freizeitaktivitäten.</div>
-            <div class="price-row">
-              <span class="price-old">69,90 €</span>
-              <span class="price-new">49,90 €</span>
-            </div>
-            <button class="add-btn">In den Warenkorb</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- SALE -->
-    <section id="sale" aria-labelledby="sale-title">
-      <h2 id="sale-title" class="section-title">Aktionen &amp; Sale</h2>
-      <div class="sale-section">
-        <div class="sale-card">
-          <h3>3 kaufen, 2 bezahlen</h3>
-          <p>Gilt auf ausgewählte Bodys &amp; T‑Shirts in der Baby-Kategorie.</p>
         </div>
-        <div class="sale-card">
-          <h3>Bis zu -30 %</h3>
-          <p>Auf ausgewählte Sweatshirts, Hosen und Jacken.</p>
-        </div>
-      </div>
     </section>
-  </main>
+    
+    <section id="maedchen">
+        <h2>Mädchen (2-10 Jahre)</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1434063761731-9fc8e722a19e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Kleider">
+                <div class="product-info">
+                    <h3>Bunte Kleider</h3>
+                    <p>Für jeden Tag, gemusterte Modelle.</p>
+                    <div class="price">39,90 € <span class="old-price">54,90 €</span></div>
+                    <button class="btn">In den Warenkorb</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1524504388940-b6b749e7148d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="T-Shirt">
+                <div class="product-info">
+                    <h3>T-Shirts & Cardigans</h3>
+                    <p>Bequem für Spielplatz.</p>
+                    <div class="price">29,90 €</div>
+                    <button class="btn">In den Warenkorb</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="jungen">
+        <h2>Jungen (2-10 Jahre)</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1578936961178-e9ecffc1d3b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Jeans">
+                <div class="product-info">
+                    <h3>Jeans & Jogginghosen</h3>
+                    <p>Robust für Schule und Sport.</p>
+                    <div class="price">48,90 € <span class="old-price">69,90 €</span></div>
+                    <button class="btn">In den Warenkorb</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1578969873679-f55fe67d007b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sweatshirt">
+                <div class="product-info">
+                    <h3>Sweatshirts</h3>
+                    <p>Lässige Styles für Freizeit.</p>
+                    <div class="price">34,90 €</div>
+                    <button class="btn">In den Warenkorb</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="schulmode">
+        <h2>Schulmode</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1592853621834-9c7634f44e14?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Jacken">
+                <div class="product-info">
+                    <h3>Übergangsjacken</h3>
+                    <p>Parkas und Regenjacken.</p>
+                    <div class="price">59,90 €</div>
+                    <button class="btn">In den Warenkorb</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Tomomo1932 KidsWear. Alle Rechte vorbehalten. | Nastätten, Deutschland</p>
+    </footer>
 
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <div class="footer-title">Tomo1932</div>
-        <p>Bunte, bequeme und alltagstaugliche Kinderbekleidung für Familien in Deutschland.</p>
-      </div>
-      <div>
-        <div class="footer-title">Service</div>
-        <div class="footer-links">
-          <a href="#">Versand &amp; Lieferung</a>
-          <a href="#">Retouren &amp; Umtausch</a>
-          <a href="#" id="hilfe">FAQ &amp; Hilfe</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-title">Rechtliches</div>
-        <div class="footer-links">
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
-          <a href="#">AGB</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2025 Tomo1932 – Alle Rechte vorbehalten.
-    </div>
-  </footer>
+    <script>
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
