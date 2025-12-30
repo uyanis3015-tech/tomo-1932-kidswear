@@ -1,76 +1,187 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TOMOKidswear – Kinderbekleidung Online Shop</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Tomo1932 - Çocuk Giyim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header class="header">
-    <div class="header-container">
-        <img src="assets/logo.png" alt="TOMOKidswear Logo" class="logo">
-        <nav class="nav-menu">
-            <a href="#home">Startseite</a>
-            <a href="#kinder-mode">Kinder Mode</a>
-            <a href="#angebote">Angebote</a>
-            <a href="#kontakt">Kontakt</a>
-        </nav>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="logo">Tomo1932</div>
+      <nav class="main-nav">
+        <a href="#baby">Bebek</a>
+        <a href="#girl">Kız Çocuk</a>
+        <a href="#boy">Erkek Çocuk</a>
+        <a href="#campaigns">Kampanyalar</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+      <div class="actions">
+        <input type="text" placeholder="Ürün ara...">
+        <button class="btn-outline">Giriş Yap</button>
+        <button class="btn-primary">Sepetim</button>
+      </div>
     </div>
-</header>
+  </header>
 
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Willkommen bei <span>TOMOKidswear</span></h1>
-        <p>Die besten Kinderoutfits online – Stilvoll. Bequem. Sicher.</p>
-        <a href="#kinder-mode" class="btn">Jetzt entdecken</a>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Renkli ve Rahat Çocuk Giyimi</h1>
+        <p>0–12 yaş arası çocuklar için yumuşak kumaşlar, canlı renkler ve günlük kullanıma uygun tasarımlar.</p>
+        <div class="hero-buttons">
+          <a href="#campaigns" class="btn-primary">Günün Fırsatları</a>
+          <a href="#baby" class="btn-outline">Yeni Sezonu Keşfet</a>
+        </div>
+        <ul class="hero-badges">
+          <li>Kolay iade</li>
+          <li>Hızlı teslimat</li>
+          <li>Güvenli ödeme</li>
+        </ul>
+      </div>
+      <div class="hero-image">
+        <div class="hero-card">Yeni Sezon %30’a varan indirim</div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="categories" id="kinder-mode">
-    <h2>Unsere Kategorien</h2>
-    <div class="category-cards">
-        <div class="card">
-            <img src="assets/images/kategorie-kids.jpg" alt="Kinder Mode">
-            <h3>Kinder Mode</h3>
-        </div>
-        <div class="card">
-            <img src="assets/images/kategorie-baby.jpg" alt="Babymode">
-            <h3>Babymode</h3>
-        </div>
-        <div class="card">
-            <img src="assets/images/kategorie-angebote.jpg" alt="Angebote">
-            <h3>Angebote</h3>
-        </div>
+  <section id="campaigns" class="section">
+    <div class="container">
+      <h2>Günün Fırsat Ürünleri</h2>
+      <div class="product-grid">
+        <article class="product-card">
+          <span class="badge">İndirim</span>
+          <h3>Renkli Sweatshirt</h3>
+          <p class="price">
+            <span class="price-old">499 TL</span>
+            <span class="price-new">349 TL</span>
+          </p>
+          <button class="btn-full">Sepete Ekle</button>
+        </article>
+
+        <article class="product-card">
+          <span class="badge badge-green">Yeni</span>
+          <h3>2'li Bebek Takım</h3>
+          <p class="price">
+            <span class="price-old">599 TL</span>
+            <span class="price-new">429 TL</span>
+          </p>
+          <button class="btn-full">Sepete Ekle</button>
+        </article>
+
+        <article class="product-card">
+          <span class="badge">İndirim</span>
+          <h3>Kız Çocuk Elbise</h3>
+          <p class="price">
+            <span class="price-old">699 TL</span>
+            <span class="price-new">489 TL</span>
+          </p>
+          <button class="btn-full">Sepete Ekle</button>
+        </article>
+
+        <article class="product-card">
+          <span class="badge badge-green">Popüler</span>
+          <h3>Erkek Çocuk Eşofman</h3>
+          <p class="price">
+            <span class="price-old">549 TL</span>
+            <span class="price-new">399 TL</span>
+          </p>
+          <button class="btn-full">Sepete Ekle</button>
+        </article>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="featured-products" id="angebote">
-    <h2>Top Angebote</h2>
-    <div class="products-grid">
-        <div class="product">
-            <img src="assets/images/product1.jpg" alt="Produkt 1">
-            <p>Cooles Kinder T-Shirt</p>
-            <span>€29,99</span>
+  <section id="baby" class="section section-alt">
+    <div class="container">
+      <h2>Bebek Giyim</h2>
+      <p>0–24 ay bebekler için pamuklu body, tulum, set ve daha fazlası.</p>
+      <div class="category-row">
+        <div class="category-card">
+          <h3>Body & Zıbın</h3>
+          <p>Organik pamuk, nazik doku.</p>
         </div>
-        <div class="product">
-            <img src="assets/images/product2.jpg" alt="Produkt 2">
-            <p>Bequeme Jogginghose</p>
-            <span>€34,99</span>
+        <div class="category-card">
+          <h3>Uyku Tulumları</h3>
+          <p>Gece boyu sıcak ve rahat.</p>
         </div>
-        <div class="product">
-            <img src="assets/images/product3.jpg" alt="Produkt 3">
-            <p>Warm Winterjacke</p>
-            <span>€49,99</span>
+        <div class="category-card">
+          <h3>Takımlar</h3>
+          <p>Hazır kombine setler.</p>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<footer class="footer" id="kontakt">
-    <p>© 2025 TOMOKidswear • Alle Rechte vorbehalten.</p>
-    <p>Kontakt: info@tomokidswear.de</p>
-</footer>
+  <section id="girl" class="section">
+    <div class="container">
+      <h2>Kız Çocuk</h2>
+      <p>Elbiseler, tişörtler ve günlük kombinler.</p>
+      <div class="category-row">
+        <div class="category-card">
+          <h3>Elbiseler</h3>
+          <p>Renkli ve desenli modeller.</p>
+        </div>
+        <div class="category-card">
+          <h3>Üst Giyim</h3>
+          <p>Tişört, sweatshirt, hırka.</p>
+        </div>
+        <div class="category-card">
+          <h3>Alt Giyim</h3>
+          <p>Tayt, etek, pantolon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="boy" class="section section-alt">
+    <div class="container">
+      <h2>Erkek Çocuk</h2>
+      <p>Enerjik tasarımlar, dayanıklı kumaşlar.</p>
+      <div class="category-row">
+        <div class="category-card">
+          <h3>Tişört & Sweat</h3>
+          <p>Günlük okul ve oyun stilleri.</p>
+        </div>
+        <div class="category-card">
+          <h3>Alt Giyim</h3>
+          <p>Eşofman, jean, şort.</p>
+        </div>
+        <div class="category-card">
+          <h3>Dış Giyim</h3>
+          <p>Mont, kaban, yağmurluk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container footer-grid">
+      <div>
+        <h3>Tomo1932</h3>
+        <p>Çocukların dünyasına uygun, renkli ve konforlu giyim ürünleri.</p>
+      </div>
+      <div>
+        <h3>Müşteri Hizmetleri</h3>
+        <ul class="footer-list">
+          <li>Sık Sorulan Sorular</li>
+          <li>Kargo & Teslimat</li>
+          <li>İade & Değişim</li>
+        </ul>
+      </div>
+      <div>
+        <h3>İletişim</h3>
+        <ul class="footer-list">
+          <li>E-posta: info@tomo1932.com</li>
+          <li>Telefon: +90 000 000 00 00</li>
+          <li>Instagram: @tomo1932</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright">
+      © 2025 Tomo1932. Tüm hakları saklıdır.
+    </div>
+  </section>
 </body>
 </html>
