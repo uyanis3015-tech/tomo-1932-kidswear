@@ -1,356 +1,306 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Tomo1932 - Kinderbekleidung</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Tomo1932 – Kinderbekleidung 0–12 Jahre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="logo">Tomo1932</div>
-      <nav class="main-nav">
-        <a href="#baby">Baby</a>
-        <a href="#girl">Mädchen</a>
-        <a href="#boy">Jungen</a>
-        <a href="#campaigns">Angebote</a>
-        <a href="#contact">Kontakt</a>
-      </nav>
-      <div class="actions">
-        <input type="text" placeholder="Produkte suchen...">
-        <button class="btn-outline">Anmelden</button>
-        <button class="btn-primary">Warenkorb</button>
+
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        Kostenlose Rückgabe · Schneller Versand · Sanfte Stoffe für empfindliche Kinderhaut
+      </div>
+      <div class="top-bar-right">
+        Hilfe & Kontakt
       </div>
     </div>
   </header>
 
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-main">Tomo1932</span>
+        <span class="logo-sub">Kinder & Baby</span>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#baby">Baby 0–24 Monate</a>
+        <a href="#kids">Kinder 2–6 Jahre</a>
+        <a href="#junior">Junior 7–12 Jahre</a>
+        <a href="#sale">Sale</a>
+      </nav>
+
+      <div class="header-actions">
+        <input type="text" class="search-input" placeholder="Suche nach Produkten..." />
+        <button class="icon-button" aria-label="Wunschliste">♥</button>
+        <button class="icon-button" aria-label="Warenkorb">🛒</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-text">
-        <h1>Bunte &amp; Bequeme Kinderbekleidung</h1>
-        <p>Alltagstaugliche Outfits für Kinder von 0–12 Jahren – weich, farbenfroh und bequem.</p>
+        <h1>Bunte & bequeme Kinderbekleidung</h1>
+        <p>
+          Alltagstaugliche Mode für Babys und Kinder von 0–12 Jahren –
+          weiche Stoffe, fröhliche Farben, faire Preise.
+        </p>
         <div class="hero-buttons">
-          <a href="#campaigns" class="btn-primary">Tagesangebote</a>
-          <a href="#baby" class="btn-outline">Neue Kollektion</a>
+          <a href="#baby" class="btn primary">Baby-Kollektion entdecken</a>
+          <a href="#kids" class="btn secondary">Kinder-Kollektion entdecken</a>
         </div>
-        <ul class="hero-badges">
-          <li>Einfache Rückgabe</li>
-          <li>Schneller Versand</li>
-          <li>Sichere Zahlung</li>
-        </ul>
       </div>
       <div class="hero-image">
-        <div class="hero-card">Neue Saison ab 14,90&nbsp;€</div>
+        <div class="hero-placeholder">
+          Foto: lachende Kinder in bunter Kleidung
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ANGEBOTE -->
-  <section id="campaigns" class="section">
+  <!-- KATEGORIEN TEASER (ähnlich Civil) -->
+  <section class="categories">
     <div class="container">
-      <h2>Tagesangebote</h2>
+      <h2>Shoppe nach Kategorie</h2>
+      <div class="category-grid">
+        <a href="#baby" class="category-card">
+          <div class="category-image cat-baby"></div>
+          <div class="category-content">
+            <h3>Baby 0–24 Monate</h3>
+            <p>Bodys, Strampler, Schlafsäcke & Sets aus Bio-Baumwolle.</p>
+          </div>
+        </a>
+
+        <a href="#kids" class="category-card">
+          <div class="category-image cat-kids"></div>
+          <div class="category-content">
+            <h3>Kinder 2–6 Jahre</h3>
+            <p>Alltagstaugliche Kleider, Shirts, Hosen und Sweatshirts.</p>
+          </div>
+        </a>
+
+        <a href="#junior" class="category-card">
+          <div class="category-image cat-junior"></div>
+          <div class="category-content">
+            <h3>Junior 7–12 Jahre</h3>
+            <p>Lässige Styles für Schule, Sport und Freizeit.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BABY SEKTION -->
+  <section id="baby" class="product-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Babybekleidung 0–24 Monate</h2>
+        <a href="#" class="link-all">Alle Baby-Artikel anzeigen</a>
+      </div>
+
+      <div class="product-grid">
+        <!-- Produkt 1 -->
+        <article class="product-card">
+          <div class="product-image baby-1"></div>
+          <h3>Bio-Baumwolle Body 3er-Pack</h3>
+          <p class="product-desc">
+            Extra weiche, atmungsaktive Bodys für Neugeborene und Babys.
+          </p>
+          <div class="product-prices">
+            <span class="old-price">49,90 €</span>
+            <span class="new-price">34,90 €</span>
+          </div>
+          <button class="btn small">In den Warenkorb</button>
+        </article>
+
+        <!-- Produkt 2 -->
+        <article class="product-card">
+          <div class="product-image baby-2"></div>
+          <h3>Schlafsack aus Jersey</h3>
+          <p class="product-desc">
+            Hält die ganze Nacht warm – ideal für kühle Nächte.
+          </p>
+          <div class="product-prices">
+            <span class="old-price">59,90 €</span>
+            <span class="new-price">42,90 €</span>
+          </div>
+          <button class="btn small">In den Warenkorb</button>
+        </article>
+
+        <!-- Produkt 3 -->
+        <article class="product-card">
+          <div class="product-image baby-3"></div>
+          <h3>Body & Strampler Set</h3>
+          <p class="product-desc">
+            Fertig kombinierte Outfits für jeden Tag.
+          </p>
+          <div class="product-prices">
+            <span class="old-price">69,90 €</span>
+            <span class="new-price">48,90 €</span>
+          </div>
+          <button class="btn small">In den Warenkorb</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- KINDER SEKTION -->
+  <section id="kids" class="product-section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2>Kinderbekleidung 2–6 Jahre</h2>
+        <a href="#" class="link-all">Alle Kinder-Artikel anzeigen</a>
+      </div>
+
       <div class="product-grid">
         <article class="product-card">
-          <span class="badge">Rabatt</span>
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Bunter Kinder-Sweatshirt"
-              class="product-image"
-            >
-          </div>
+          <div class="product-image kids-1"></div>
           <h3>Bunter Sweatshirt</h3>
-          <p class="price">
-            <span class="price-old">24,90&nbsp;€</span>
-            <span class="price-new">17,90&nbsp;€</span>
+          <p class="product-desc">
+            Weicher Stoff, fröhliche Farben – perfekt für Kita und Spielplatz.
           </p>
-          <button class="btn-full">In den Warenkorb</button>
+          <div class="product-prices">
+            <span class="old-price">54,90 €</span>
+            <span class="new-price">39,90 €</span>
+          </div>
+          <button class="btn small">In den Warenkorb</button>
         </article>
 
         <article class="product-card">
-          <span class="badge badge-green">Neu</span>
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1585109649172-72a3aac03c11?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Baby-Set"
-              class="product-image"
-            >
-          </div>
-          <h3>2-teiliges Baby-Set</h3>
-          <p class="price">
-            <span class="price-old">22,90&nbsp;€</span>
-            <span class="price-new">16,90&nbsp;€</span>
+          <div class="product-image kids-2"></div>
+          <h3>T-Shirt mit Print</h3>
+          <p class="product-desc">
+            Atmungsaktives Material mit kindgerechten Motiven.
           </p>
-          <button class="btn-full">In den Warenkorb</button>
+          <div class="product-prices">
+            <span class="old-price">29,90 €</span>
+            <span class="new-price">19,90 €</span>
+          </div>
+          <button class="btn small">In den Warenkorb</button>
         </article>
 
         <article class="product-card">
-          <span class="badge">Rabatt</span>
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1519235106638-30cc49b5dbc8?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Mädchenkleid"
-              class="product-image"
-            >
-          </div>
-          <h3>Mädchenkleid mit Muster</h3>
-          <p class="price">
-            <span class="price-old">29,90&nbsp;€</span>
-            <span class="price-new">21,90&nbsp;€</span>
+          <div class="product-image kids-3"></div>
+          <h3>Jogginghose</h3>
+          <p class="product-desc">
+            Elastischer Bund, robuste Qualität für jeden Tag.
           </p>
-          <button class="btn-full">In den Warenkorb</button>
-        </article>
-
-        <article class="product-card">
-          <span class="badge badge-green">Beliebt</span>
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1503455637927-730bce8583c0?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Jungen-Jogginganzug"
-              class="product-image"
-            >
+          <div class="product-prices">
+            <span class="old-price">39,90 €</span>
+            <span class="new-price">27,90 €</span>
           </div>
-          <h3>Jungen-Jogginganzug</h3>
-          <p class="price">
-            <span class="price-old">26,90&nbsp;€</span>
-            <span class="price-new">19,90&nbsp;€</span>
-          </p>
-          <button class="btn-full">In den Warenkorb</button>
+          <button class="btn small">In den Warenkorb</button>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- BABY -->
-  <section id="baby" class="section section-alt">
+  <!-- JUNIOR SEKTION -->
+  <section id="junior" class="product-section">
     <div class="container">
-      <h2>Babybekleidung</h2>
-      <p>Weiche Basics für die Kleinsten – von 0 bis 24 Monate.</p>
-
-      <div class="category-row">
-        <div class="category-card">
-          <h3>Bodys &amp; Strampler</h3>
-          <p>Sanfte Baumwolle für empfindliche Babyhaut.</p>
-        </div>
-        <div class="category-card">
-          <h3>Schlafsäcke</h3>
-          <p>Ruhiger Schlaf bei jeder Jahreszeit.</p>
-        </div>
-        <div class="category-card">
-          <h3>Sets</h3>
-          <p>Praktische Kombis für jeden Tag.</p>
-        </div>
+      <div class="section-header">
+        <h2>Junior 7–12 Jahre</h2>
+        <a href="#" class="link-all">Alle Junior-Artikel anzeigen</a>
       </div>
 
-      <div class="product-grid product-grid-sm">
+      <div class="product-grid">
         <article class="product-card">
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Neutrale Babybodys"
-              class="product-image"
-            >
-          </div>
-          <h3>2er Pack Babybodys</h3>
-          <p class="price">
-            <span class="price-new">14,90&nbsp;€</span>
+          <div class="product-image junior-1"></div>
+          <h3>Hoodie mit Kapuze</h3>
+          <p class="product-desc">
+            Lässiger Look für Schule und Freizeit.
           </p>
+          <div class="product-prices">
+            <span class="old-price">59,90 €</span>
+            <span class="new-price">44,90 €</span>
+          </div>
+          <button class="btn small">In den Warenkorb</button>
         </article>
 
         <article class="product-card">
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1544033527-b192daee1f5b?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Baby-Schlafsack"
-              class="product-image"
-            >
-          </div>
-          <h3>Leichter Schlafsack</h3>
-          <p class="price">
-            <span class="price-new">19,90&nbsp;€</span>
+          <div class="product-image junior-2"></div>
+          <h3>Denim Jeans</h3>
+          <p class="product-desc">
+            Bequeme Passform, strapazierfähiger Stoff.
           </p>
+          <div class="product-prices">
+            <span class="old-price">49,90 €</span>
+            <span class="new-price">34,90 €</span>
+          </div>
+          <button class="btn small">In den Warenkorb</button>
         </article>
 
         <article class="product-card">
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Baby-Set"
-              class="product-image"
-            >
-          </div>
-          <h3>Baby-Set 3-teilig</h3>
-          <p class="price">
-            <span class="price-new">24,90&nbsp;€</span>
+          <div class="product-image junior-3"></div>
+          <h3>Sport-Set</h3>
+          <p class="product-desc">
+            Ideal für Sportverein und aktive Kids.
           </p>
+          <div class="product-prices">
+            <span class="old-price">69,90 €</span>
+            <span class="new-price">49,90 €</span>
+          </div>
+          <button class="btn small">In den Warenkorb</button>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- MÄDCHEN -->
-  <section id="girl" class="section">
+  <!-- SALE / KAMPAGNEN -->
+  <section id="sale" class="sale-section">
     <div class="container">
-      <h2>Mädchen</h2>
-      <p>Verspielte Designs für Kindergarten, Schule und Freizeit.</p>
-
-      <div class="category-row">
-        <div class="category-card">
-          <h3>Kleider</h3>
-          <p>Bunte, luftige Kleider für jeden Anlass.</p>
+      <h2>Aktionen & Sale</h2>
+      <div class="sale-grid">
+        <div class="sale-card">
+          <h3>3 kaufen, 2 bezahlen</h3>
+          <p>Gilt auf ausgewählte Bodys & T-Shirts in der Baby-Kategorie.</p>
         </div>
-        <div class="category-card">
-          <h3>Oberteile</h3>
-          <p>T-Shirts, Sweatshirts und Cardigans.</p>
+        <div class="sale-card">
+          <h3>Bis zu -30 %</h3>
+          <p>Auf ausgewählte Sweatshirts und Hosen für Kinder & Junior.</p>
         </div>
-        <div class="category-card">
-          <h3>Hosen &amp; Leggings</h3>
-          <p>Bequem und strapazierfähig.</p>
-        </div>
-      </div>
-
-      <div class="product-grid product-grid-sm">
-        <article class="product-card">
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1521252659862-eec69941b071?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Geblümtes Mädchenkleid"
-              class="product-image"
-            >
-          </div>
-          <h3>Geblümtes Kleid</h3>
-          <p class="price">
-            <span class="price-new">19,90&nbsp;€</span>
-          </p>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1519235106638-30cc49b5dbc8?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Mädchen Outfit"
-              class="product-image"
-            >
-          </div>
-          <h3>Basic T-Shirt</h3>
-          <p class="price">
-            <span class="price-new">9,90&nbsp;€</span>
-          </p>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1593030103475-1b3c01cffe72?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Mädchen Leggings"
-              class="product-image"
-            >
-          </div>
-          <h3>2er Pack Leggings</h3>
-          <p class="price">
-            <span class="price-new">14,90&nbsp;€</span>
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- JUNGEN -->
-  <section id="boy" class="section section-alt">
-    <div class="container">
-      <h2>Jungen</h2>
-      <p>Lässige Styles für aktive Jungs.</p>
-
-      <div class="category-row">
-        <div class="category-card">
-          <h3>T-Shirts &amp; Sweatshirts</h3>
-          <p>Für Schule, Sport und Freizeit.</p>
-        </div>
-        <div class="category-card">
-          <h3>Hosen</h3>
-          <p>Jeans, Jogginghosen und Shorts.</p>
-        </div>
-        <div class="category-card">
-          <h3>Jacken</h3>
-          <p>Perfekt für jedes Wetter.</p>
-        </div>
-      </div>
-
-      <div class="product-grid product-grid-sm">
-        <article class="product-card">
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Jungen T-Shirt"
-              class="product-image"
-            >
-          </div>
-          <h3>Print T-Shirt</h3>
-          <p class="price">
-            <span class="price-new">9,90&nbsp;€</span>
-          </p>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Jungen Jeans"
-              class="product-image"
-            >
-          </div>
-          <h3>Stretch-Jeans</h3>
-          <p class="price">
-            <span class="price-new">19,90&nbsp;€</span>
-          </p>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-              alt="Jungen Hoodie"
-              class="product-image"
-            >
-          </div>
-          <h3>Kapuzenpullover</h3>
-          <p class="price">
-            <span class="price-new">24,90&nbsp;€</span>
-          </p>
-        </article>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <section id="contact" class="section">
-    <div class="container footer-grid">
-      <div>
-        <h3>Tomo1932</h3>
-        <p>Farbenfrohe und bequeme Kinderbekleidung, inspiriert vom Familienalltag in Deutschland.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Tomo1932</h4>
+        <p>
+          Bunte, bequeme und alltagstaugliche Kinderbekleidung
+          für Familien in Deutschland.
+        </p>
       </div>
-      <div>
-        <h3>Kundenservice</h3>
-        <ul class="footer-list">
-          <li>Häufige Fragen (FAQ)</li>
-          <li>Versand &amp; Lieferung</li>
-          <li>Rückgabe &amp; Umtausch</li>
+      <div class="footer-col">
+        <h4>Service</h4>
+        <ul>
+          <li><a href="#">Versand & Lieferung</a></li>
+          <li><a href="#">Retouren & Umtausch</a></li>
+          <li><a href="#">FAQ</a></li>
         </ul>
       </div>
-      <div>
-        <h3>Rechtliches</h3>
-        <ul class="footer-list">
-          <li>Impressum</li>
-          <li>Datenschutz</li>
-          <li>AGB</li>
-          <li>Widerrufsbelehrung</li>
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">AGB</a></li>
         </ul>
       </div>
     </div>
-    <div class="container copyright">
-      © 2025 Tomo1932. Alle Rechte vorbehalten.
+    <div class="footer-bottom">
+      © 2025 Tomo1932 – Alle Rechte vorbehalten.
     </div>
-  </section>
+  </footer>
+
 </body>
 </html>
