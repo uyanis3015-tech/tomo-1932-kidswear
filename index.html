@@ -1,846 +1,122 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomo1932 - Kinderbekleidung | Nastätten</title>
-    <style>
-        :root {
-            --primary-color: #ff6b6b;
-            --secondary-color: #4ecdc4;
-            --accent-color: #45b7d1;
-            --text-dark: #2c3e50;
-            --text-light: #7f8c8d;
-            --white: #ffffff;
-            --shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.7;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 3rem;
-        }
-
-        .logo {
-            height: 60px;
-            width: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 3rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 1.1rem;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
-
-        .hamburger span {
-            width: 28px;
-            height: 3px;
-            background: var(--text-dark);
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('22268.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        .hero-content h1 {
-            font-size: 5rem;
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-            letter-spacing: 3px;
-            animation: fadeInUp 1.2s ease;
-        }
-
-        .hero-content p {
-            font-size: 1.6rem;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            animation: fadeInUp 1.2s ease 0.3s both;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            animation: fadeInUp 1.2s ease 0.6s both;
-        }
-
-        .cta-primary, .cta-secondary {
-            padding: 1.2rem 3rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: all 0.4s ease;
-            display: inline-block;
-        }
-
-        .cta-primary {
-            background: var(--primary-color);
-            color: white;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
-        }
-
-        .cta-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .cta-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.5);
-        }
-
-        .cta-secondary:hover {
-            background: white;
-            color: var(--text-dark);
-        }
-
-        /* Collections */
-        .collections {
-            padding: 8rem 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 3.5rem;
-            text-align: center;
-            margin-bottom: 4rem;
-            color: var(--text-dark);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 3px;
-            background: var(--primary-color);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-
-        .product-info {
-            padding: 2rem;
-        }
-
-        .product-category {
-            color: var(--secondary-color);
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            color: var(--text-dark);
-            line-height: 1.3;
-        }
-
-        .product-price {
-            font-size: 1.6rem;
-            color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .product-actions {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .add-to-cart {
-            flex: 1;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 1rem;
-            border-radius: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .add-to-cart:hover {
-            background: #e55a5a;
-            transform: translateY(-2px);
-        }
-
-        .quick-view {
-            background: transparent;
-            border: 2px solid #ecf0f1;
-            color: var(--text-dark);
-            padding: 1rem;
-            border-radius: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .quick-view:hover {
-            background: var(--text-dark);
-            color: white;
-            border-color: var(--text-dark);
-        }
-
-        /* Lookbook */
-        .lookbook {
-            padding: 8rem 3rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .lookbook-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .lookbook-item {
-            position: relative;
-            height: 500px;
-            border-radius: 25px;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: flex-end;
-            color: white;
-            padding: 3rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-        }
-
-        .lookbook-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-        }
-
-        .lookbook-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .lookbook-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* About */
-        .about {
-            padding: 8rem 3rem;
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .about p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        /* Newsletter */
-        .newsletter {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
-            padding: 6rem 3rem;
-        }
-
-        .newsletter h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .newsletter p {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            opacity: 0.95;
-        }
-
-        .newsletter form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .newsletter input {
-            flex: 1;
-            min-width: 300px;
-            padding: 1.3rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            background: rgba(255,255,255,0.9);
-        }
-
-        .newsletter button {
-            background: white;
-            color: var(--primary-color);
-            border: none;
-            padding: 1.3rem 3rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text-dark);
-            color: white;
-            padding: 4rem 3rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .footer-section p, .footer-section a {
-            color: #bdc3c7;
-            text-decoration: none;
-            line-height: 1.8;
-        }
-
-        .footer-section a:hover {
-            color: var(--primary-color);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                left: -100%;
-                top: 80px;
-                flex-direction: column;
-                background: white;
-                width: 100%;
-                text-align: center;
-                padding: 3rem 0;
-                box-shadow: var(--shadow);
-                transition: left 0.3s ease;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-
-            .hero-content p {
-                font-size: 1.3rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            nav {
-                padding: 0 2rem;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 2rem;
-            }
-
-            .newsletter form {
-                flex-direction: column;
-            }
-
-            .newsletter input {
-                min-width: auto;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <img src="21686.jpeg" alt="Tomo1932 Logo" class="logo">
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Startseite</a></li>
-                <li><a href="#collections">Kollektion</a></li>
-                <li><a href="#lookbook">Lookbook</a></li>
-                <li><a href="#about">Über uns</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Tomo1932</h1>
-            <p>Exklusive Kindermode aus Nastätten. Qualität, Stil und Liebe in jeder Kollektion.</p>
-            <div class="cta-buttons">
-                <a href="#collections" class="cta-primary">Kollektion entdecken</a>
-                <a href="#lookbook" class="cta-secondary">Lookbook</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Collections -->
-    <section id="collections" class="collections">
-        <h2 class="section-title">Neue Kollektion</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <img src="22264.jpg" alt="Gelbes Baby Body" class="product-image">
-                <div class="product-info">
-                    <div class="product-category">Baby</div>
-                    <h3 class="product-title">Gelbes Bio-Baumwoll-Body</h3>
-                    <div class="product-price">€34,99</div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">In den Warenkorb</button>
-                        <button class="quick-view">Schnellansicht</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="22262.jpg" alt="Levi's Set" class="product-image">
-                <div class="product-info">
-                    <div class="product-category">Kinder</div>
-                    <h3 class="product-title">Levi's Denim-Set</h3>
-                    <div class="product-price">€89,99</div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">In den Warenkorb</button>
-                        <button class="quick-view">Schnellansicht</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="22266.jpg" alt="Blumenkleid" class="product-image">
-                <div class="product-info">
-                    <div class="product-category">Mädchen</div>
-                    <h3 class="product-title">Blumenkleid</h3>
-                    <div class="product-price">€59,99</div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">In den Warenkorb</button>
-                        <button class="quick-view">Schnellansicht</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="22261.jpg" alt="Grüne Kleider" class="product-image">
-                <div class="product-info">
-                    <div class="product-category">Mädchen</div>
-                    <h3 class="product-title">Grünes Kleider-Set</h3>
-                    <div class="product-price">€74,99</div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">In den Warenkorb</button>
-                        <button class="quick-view">Schnellansicht</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="22263.jpg" alt="Bunte Strick" class="product-image">
-                <div class="product-info">
-                    <div class="product-category">Baby</div>
-                    <h3 class="product-title">Bunter Strick-Anzug</h3>
-                    <div class="product-price">€49,99</div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">In den Warenkorb</button>
-                        <button class="quick-view">Schnellansicht</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="22259.jpg" alt="Rosa Regenjacke" class="product-image">
-                <div class="product-info">
-                    <div class="product-category">Außerkleidung</div>
-                    <h3 class="product-title">Rosa Regenjacke</h3>
-                    <div class="product-price">€69,99</div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">In den Warenkorb</button>
-                        <button class="quick-view">Schnellansicht</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="22258.jpg" alt="Weißes Body-Set" class="product-image">
-                <div class="product-info">
-                    <div class="product-category">Baby</div>
-                    <h3 class="product-title">Weißes Body & Accessoires</h3>
-                    <div class="product-price">€39,99</div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">In den Warenkorb</button>
-                        <button class="quick-view">Schnellansicht</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="22255.jpg" alt="Strick-Korb" class="product-image">
-                <div class="product-info">
-                    <div class="product-category">Set</div>
-                    <h3 class="product-title">Strick-Korb-Set</h3>
-                    <div class="product-price">€54,99</div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">In den Warenkorb</button>
-                        <button class="quick-view">Schnellansicht</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lookbook -->
-    <section id="lookbook" class="lookbook">
-        <h2 class="section-title">Lookbook</h2>
-        <div class="lookbook-grid">
-            <div class="lookbook-item" style="background-image: url('22265.jpg');">
-                <div class="lookbook-overlay"></div>
-                <div class="lookbook-content">
-                    <h3 class="lookbook-title">Frühlingsbrise</h3>
-                    <p>Weiche Farben und natürliche Stoffe</p>
-                </div>
-            </div>
-            <div class="lookbook-item" style="background-image: url('22260.jpg');">
-                <div class="lookbook-overlay"></div>
-                <div class="lookbook-content">
-                    <h3 class="lookbook-title">Sommerkollektion</h3>
-                    <p>Leichte und bequeme Designs</p>
-                </div>
-            </div>
-            <div class="lookbook-item" style="background-image: url('22269.jpg');">
-                <div class="lookbook-overlay"></div>
-                <div class="lookbook-content">
-                    <h3 class="lookbook-title">Neueste Trends</h3>
-                    <p>Die Besten der Kindermode</p>
-                </div>
-            </div>
-            <div class="lookbook-item" style="background-image: url('22248.jpg');">
-                <div class="lookbook-overlay"></div>
-                <div class="lookbook-content">
-                    <h3 class="lookbook-title">Farbrausch</h3>
-                    <p>Bunte Farben und fröhliche Muster</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="about">
-        <h2 class="section-title">Über uns</h2>
-        <p>Tomo1932 bringt aus Nastätten, Rheinland-Pfalz, frischen Wind in die Kindermode. Inspiriert vom eleganten Stil von Noé & Zoë Berlin, gestalten und produzieren wir jedes Stück mit Liebe.[web:21]</p>
-        <p>Hochwertige Bio-Stoffe, zeitlose Designs und nachhaltige Produktion – das Beste für Ihre Kinder. Entdecken Sie unsere Kollektionen für jedes Alter.</p>
-        <p>Wir sind stolz, die schönste Kinderkleidung aus Rheinland-Pfalz zu sein.</p>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter" id="contact">
-        <h2>Newsletter abonnieren</h2>
-        <p>Seien Sie als Erster über neue Kollektionen, Sonderangebote und Überraschungs-Geschenke informiert!</p>
-        <form id="newsletterForm">
-            <input type="email" placeholder="E-Mail-Adresse eingeben" required>
-            <button type="submit">Abonnieren 🎁</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Tomo1932</h3>
-                <p>Nastätten, Rheinland-Pfalz<br>Deutschland</p>
-            </div>
-            <div class="footer-section">
-                <h3>Kategorien</h3>
-                <p><a href="#">Babykleidung</a></p>
-                <p><a href="#">Kinder-Kollektion</a></p>
-                <p><a href="#">Außerkleidung</a></p>
-                <p><a href="#">Accessoires</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>Kundenservice</h3>
-                <p>info@tomo1932.com</p>
-                <p>+49 123 456 7890</p>
-                <div class="social-links">
-                    <a href="#">📘</a>
-                    <a href="#">📷</a>
-                    <a href="#">🐦</a>
-                    <a href="#">📱</a>
-                </div>
-            </div>
-        </div>
-        <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #34495e;">
-            <p>&copy; 2025 Tomo1932. Alle Rechte vorbehalten.[file:56]</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Navigation
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 5px 30px rgba(0,0,0,0.15)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.97)';
-                header.style.boxShadow = '0 10px 40px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Product Actions
-        document.querySelectorAll('.add-to-cart').forEach(btn => {
-            btn.addEventListener('click', () => {
-                btn.textContent = 'Hinzugefügt! ✅';
-                btn.style.background = '#27ae60';
-                setTimeout(() => {
-                    btn.textContent = 'In den Warenkorb';
-                    btn.style.background = 'var(--primary-color)';
-                }, 2000);
-            });
-        });
-
-        document.querySelectorAll('.quick-view').forEach(btn => {
-            btn.addEventListener('click', () => {
-                alert('Produktdetails kommen bald! 👀');
-            });
-        });
-
-        // Newsletter
-        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = e.target.querySelector('input').value;
-            alert(Vielen Dank ${email}! 🎉 Sie sind im Newsletter angemeldet.);
-            e.target.reset();
-        });
-
-        // Scroll Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.product-card, .lookbook-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(40px)';
-            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #ffcc00;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.hero {
+    background-color: #ffe680;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.products {
+    padding: 50px 20px;
+}
+
+.products h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.contact {
+    padding: 50px 20px;
+    background-color: #ffe680;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact form input, .contact form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact form button {
+    padding: 10px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
