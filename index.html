@@ -1,122 +1,66 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civil Kinder Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Civil Kinder Mode</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Startseite</a></li>
+                <li><a href="#produkte">Produkte</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-}
+    <section id="home" class="hero">
+        <h1>Willkommen bei Civil Kinder Mode</h1>
+        <p>Modische Kleidung für Kinder von 0 bis 10 Jahren</p>
+    </section>
 
-header {
-    background-color: #ffcc00;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    <section id="produkte" class="products">
+        <h2>Unsere Produkte</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x200/ffcccc/000000?text=Baby+Strampler" alt="Baby Strampler">
+                <h3>Baby Strampler</h3>
+                <p>0-12 Monate</p>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x200/ccffcc/000000?text=Kinder+T-Shirt" alt="Kinder T-Shirt">
+                <h3>Kinder T-Shirt</h3>
+                <p>2-5 Jahre</p>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x200/ccccff/000000?text=Hose+für+Kinder" alt="Hose für Kinder">
+                <h3>Hose für Kinder</h3>
+                <p>3-8 Jahre</p>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x200/ffffcc/000000?text=Pullover+für+Kinder" alt="Pullover für Kinder">
+                <h3>Pullover für Kinder</h3>
+                <p>4-10 Jahre</p>
+            </div>
+        </div>
+    </section>
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
+    <section id="kontakt" class="contact">
+        <h2>Kontaktieren Sie uns</h2>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="E-Mail" required>
+            <textarea placeholder="Nachricht" required></textarea>
+            <button type="submit">Senden</button>
+        </form>
+    </section>
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-.hero {
-    background-color: #ffe680;
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 18px;
-}
-
-.products {
-    padding: 50px 20px;
-}
-
-.products h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.product-card {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.product-card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.contact {
-    padding: 50px 20px;
-    background-color: #ffe680;
-}
-
-.contact h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.contact form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact form input, .contact form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.contact form button {
-    padding: 10px;
-    background-color: #ffcc00;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
+    <footer>
+        <p>&copy; 2025 Civil Kinder Mode. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
